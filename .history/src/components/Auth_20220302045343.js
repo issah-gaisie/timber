@@ -15,7 +15,7 @@ const Auth = () => {
       <div className="my-3">
         {isLogin ? (
           <span className="text-gray-700">
-            Dont have an Account?{" "}
+            Dont have an Account{" "}
             <Link to="/signup" className="text-indigo-700">
               Sign Up
             </Link>
