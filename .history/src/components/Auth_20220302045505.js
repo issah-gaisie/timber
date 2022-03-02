@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Auth = () => {
   const { pathname } = useLocation();
-  // checking if the current location is login
+// checking if the cutr
   const isLogin = useMemo(() => pathname === "/login", [pathname]);
   return (
     <div className="h-screen w-screen p-6 flex flex-col justify-center items-center ">
@@ -15,7 +15,7 @@ const Auth = () => {
       <div className="my-3">
         {isLogin ? (
           <span className="text-gray-700">
-            Don't have an Account?{" "}
+            Dont have an Account?{" "}
             <Link to="/signup" className="text-indigo-700">
               Sign Up
             </Link>

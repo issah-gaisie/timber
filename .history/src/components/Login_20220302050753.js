@@ -4,30 +4,26 @@ import toast from "react-hot-toast";
 const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dummy login promise
-    const loginPromise = new Promise((resolve, reject) =>
-      setTimeout(
-        () =>
-          resolve({
-            message: "Logged In Successfully",
-            status: 200,
-            data: [],
-          }),
-        1000
-      )
-    );
-    // handles the toast loader for the login process
+    const loginPromise=new Promise((resolve,reject)=>setTimeout(
+      () => resolve({
+        message: "Logged In Successfully",
+        status: 200,
+        data: [],
+      }),
+      1000
+    ))
+ 
+
     toast.promise(loginPromise, {
-      loading: "Logging In",
-      success: "Logged In Successfully",
-      error: "Error Login failed",
+      loading: 'Loading',
+      success: 'Logged In Successfully',
+      error: 'Error Login failed',
     });
+
+
   };
   return (
-    <form
-      className="w-full  md:w-[30rem] flex flex-col space-y-5"
-      onSubmit={handleSubmit}
-    >
+    <form className="w-full  md:w-[30rem] flex flex-col space-y-5" onSubmit={handleSubmit}>
       <label className="block">
         <span className="block text-md font-medium text-gray-700 mb-3">
           Email Address
@@ -40,10 +36,7 @@ const Login = () => {
         </span>
         <Input placeholder="Password" type="password" />
       </label>
-      <button
-        type="submit"
-        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 my-3 rounded rounded-md"
-      >
+      <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 my-3 rounded rounded-md">
         Login to Timberland
       </button>
     </form>

@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dummy signup promise
     const signupPromise = new Promise((resolve, reject) =>
       setTimeout(
         () =>
@@ -17,7 +16,7 @@ const Signup = () => {
         1000
       )
     );
-    // toast handler for signup
+
     toast.promise(signupPromise, {
       loading: "Creating Account",
       success: "Signed up Successfully",

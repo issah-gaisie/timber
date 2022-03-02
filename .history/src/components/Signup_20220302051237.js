@@ -17,7 +17,7 @@ const Signup = () => {
         1000
       )
     );
-    // toast handler for signup
+// toast handler for signup
     toast.promise(signupPromise, {
       loading: "Creating Account",
       success: "Signed up Successfully",
