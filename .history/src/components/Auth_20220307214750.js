@@ -22,7 +22,7 @@ const Auth = () => {
 
       {/* second inner div */}
       <div
-        className={`hidden md:block flex-1 bg-[#3e7c17]  bg-cover bg-no-repeat bg-top-center `}
+        className={`hidden md:block flex-1 bg-[#3e7c17] contrast- bg-cover bg-no-repeat bg-top-center `}
         style={{
           backgroundImage: `url(${manCuttingTimber})`,
         }}

@@ -31,7 +31,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mb-10">
+      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mt-10">
         <RiShutDownLine className="text-2xl text-white" />
       </div>
     </nav>

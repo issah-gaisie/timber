@@ -27,12 +27,12 @@ const Dashboard = () => {
       {/* Dashboard Header */}
       <header className="flex justify-between items-center h-16 shadow-sm bg-white px-2 md:px-6 relative">
         <img src={logo} alt="tcl" className="h-10 w-auto object-contain" />
-        <div className="flex justify-center items-center space-x-2 pointer">
+        <div className=" justify-center items-center space-x-2 pointer">
           <div
             className="h-7 w-7 rounded rounded-full bg-green-700 bg-cover bg-no-repeat bg-center"
             style={{ backgroundImage: `url(${profile})` }}
           ></div>
-          <span className="hidden md:block text-gray-700 text-sm font-semibold ml-3">
+          <span className="md:block text-gray-700 text-sm font-semibold ml-3">
             Muniru Issah
           </span>
         </div>

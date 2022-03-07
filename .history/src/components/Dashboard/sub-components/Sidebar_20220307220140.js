@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { dashboardNavigation } from "../../../utils";
 const Sidebar = () => {
   return (
-    <nav className="h-full bg-white shadow-xs min-w-[4rem] basis-[5%] flex-col items-center justify-between  hidden md:flex">
-      <div className="flex flex-col justify-center space-y-10 pt-10">
+    <nav className="h-full bg-white shadow-xs min-w-[4rem] basis-[5%] flex-col items-center  hidden md:flex">
+      <div>
         {dashboardNavigation.map((navItem, index) => (
           <NavLink key={index} to={navItem.path} className="group">
             {({ isActive }) => (
@@ -31,7 +31,7 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mb-10">
+      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mt-10">
         <RiShutDownLine className="text-2xl text-white" />
       </div>
     </nav>
