@@ -1,0 +1,29 @@
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import { RiAddLine } from "react-icons/ri";
+import { FaFileExport } from "react-icons/fa";
+import manCTimber from "../../../assets/man_cutting_timber.jpg";
+import { userRoutes } from "../../../utils";
+import DashboardTabLink from "../sub-components/DashboardTabLink";
+const Users = () => {
+  return (
+    <div className="w-full h-full p-6 flex flex-col items-start">
+      <div className="w-full  flex justify-between items-center">
+        <h1 className="text-4xl font-extrabold my-3 text-slate-700">Users</h1>
+        <div className="flex items-center">
+          <Link to='add' className="rounded rounded-full p-2 shadow-lg bg-[#3e7c17] hover:bg-[#356C14]">
+            <RiAddLine className="text-lg text-white" />
+          </Link>
+        </div>
+      </div>
+      <nav className="w-full text-left py-4 border-b border-gray-300/25 mb-3 flex flex-wrap">
+        {userRoutes.map((route) => (
+          <DashboardTabLink {...route} />
+        ))}
+      </nav>
+      <Outlet />
+    </div>
+  );
+};
+
+export default Users;
