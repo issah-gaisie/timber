@@ -16,7 +16,7 @@ const Users = () => {
       </div>
       <nav className="w-full text-left py-4 border-b border-gray-300/25 mb-3 flex flex-wrap">
         {userRoutes.map((route,index) => (
-          <DashboardTabLink key={index} {...route} />
+          <DashboardTabLink {...route} />
         ))}
       </nav>
       <Outlet />

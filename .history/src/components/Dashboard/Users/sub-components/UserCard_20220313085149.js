@@ -14,7 +14,7 @@ const UserCard = (props) => {
   } = props;
 
   const viewUser = () => {
-    navigate(`/dashboard/users/${id}`);
+    navigate(`/users/${id}`);
   };
   return (
     <div

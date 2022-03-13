@@ -4,7 +4,6 @@ import { FaEdit } from "react-icons/fa";
 import { RiEditLine } from "react-icons/ri";
 import { Link, useParams } from "react-router-dom";
 import manCTimber from "../../../assets/man_cutting_timber.jpg";
-import { testUsers } from "../../../utils";
 import Input from "../../Input";
 const UserDetails = () => {
   const [state, setState] = useState({
@@ -24,12 +23,20 @@ const UserDetails = () => {
   }, []);
 
   const handleGetUser = () => {
-
-    const user = testUsers.filter((user) => user.id === Number(params.id));
-    setState({
-      ...state,
-      ...user[0],
-    });
+ 
+      setState({
+        ...state,
+        username: "ErnestGaisie",
+        firstName: "Ernest",
+        lastName: "Gaisie",
+        email: "ernestgaisie@gmail.com",
+        phoneNumber: "+23355234566",
+        location: "Nungua",
+        address1: "Nungua Barrier",
+        address2: "Nungua Second",
+        active: true,
+      });
+    }, 1500);
   };
 
   return (
@@ -151,13 +158,9 @@ const UserDetails = () => {
       <h2 className="w-full text-left text-xl font-medium text-gray-700 my-4">
         Signature
       </h2>
-      <div className="h-16 w-16 md:h-24 md:w-24">
-        <img
-          src={manCTimber}
-          alt="signature"
-          className="object-cover rounded rounded-lg w-full h-full contrast-50"
-        />
-      </div>
+          <div className="h-16 w-16 md:h-24 md:w-24">
+            <img src={manCTimber} alt="signature" className="object-cover rounded rounded-lg w-full h-full contrast-50" />
+          </div>
     </div>
   );
 };

@@ -25,7 +25,8 @@ const UserDetails = () => {
 
   const handleGetUser = () => {
 
-    const user = testUsers.filter((user) => user.id === Number(params.id));
+    const user = testUsers.filter((user) => user.id === (params.id));
+    console.log(testUsers,user,params.id)
     setState({
       ...state,
       ...user[0],

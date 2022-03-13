@@ -58,7 +58,7 @@ const EditUser = () => {
       success: "User Edited Successfully",
       error: "User Edit Failed",
     });
-    editUserPromise.then((results) => console.log(results));
+    editUserPromise.then(results=>console.log(results))
   };
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
@@ -69,45 +69,21 @@ const EditUser = () => {
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Username</span>
-          <Input
-            placeholder="Username"
-            id="username"
-            type="text"
-            onChange={handleChange}
-            value={state.username}
-          />
+          <Input placeholder="Username" id='username' type="text" value={state.username}  />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">First Name</span>
-          <Input
-            placeholder="First Name"
-            id="firstName"
-            type="text"
-            onChange={handleChange}
-            value={state.firstName}
-          />
+          <Input placeholder="First Name" id='firstName' type="text" value={state.firstName} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Last Name</span>
-          <Input
-            placeholder="Last Name"
-            type="text"
-            id="lastName"
-            onChange={handleChange}
-            value={state.lastName}
-          />
+          <Input placeholder="Last Name" type="text"  value={state.lastName} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
             Email Address
           </span>
-          <Input
-            placeholder="Email Address"
-            type="email"
-            id="email"
-            onChange={handleChange}
-            value={state.email}
-          />
+          <Input placeholder="Email Address" type="email" value={state.email} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
@@ -116,8 +92,6 @@ const EditUser = () => {
           <Input
             placeholder="eg: 0505707987"
             type="tel"
-            id="phoneNumber"
-            onChange={handleChange}
             value={state.phoneNumber}
           />
         </label>
@@ -126,33 +100,15 @@ const EditUser = () => {
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Location</span>
-          <Input
-            placeholder="Location"
-            type="text"
-            id="location"
-            onChange={handleChange}
-            value={state.location}
-          />
+          <Input placeholder="Location" type="text" value={state.location} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Address 1</span>
-          <Input
-            placeholder="Address 1"
-            type="text"
-            id="address1"
-            onChange={handleChange}
-            value={state.address1}
-          />
+          <Input placeholder="Address 1" type="text" value={state.address1} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Address 2</span>
-          <Input
-            placeholder="Address 2"
-            type="text"
-            id="address2"
-            onChange={handleChange}
-            value={state.address2}
-          />
+          <Input placeholder="Address 2" type="text" value={state.address2} />
         </label>
       </FormGrid>
       <h2 className=" text-xl font-medium text-gray-700 my-4">Signature</h2>

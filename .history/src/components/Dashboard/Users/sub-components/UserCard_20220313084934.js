@@ -3,7 +3,7 @@ import manCTimber from "../../../../assets/man_cutting_timber.jpg";
 import { GrView } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 const UserCard = (props) => {
-  const navigate = useNavigate();
+  const navigate=useNavigate()
   const {
     id,
     firstName = "Issah",
@@ -13,13 +13,13 @@ const UserCard = (props) => {
     active = false,
   } = props;
 
-  const viewUser = () => {
-    navigate(`/dashboard/users/${id}`);
-  };
+  const viewUser=()=>{
+    navigate(`users/${id}`)
+  }
   return (
     <div
       className={`bg-white rounded rounded-2xl flex justify-center items-center flex-col py-4 px-3  shadow shadow-sm hover:shadow-lg cursor-pointer `}
-      onClick={viewUser}
+      onClick={}
     >
       {/* image and role section */}
       <div className="h-16 w-16 relative mb-5">
