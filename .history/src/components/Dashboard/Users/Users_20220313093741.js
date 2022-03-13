@@ -1,30 +1,14 @@
-import React, { useMemo } from "react";
-import { Link, Outlet, useLocation, useRoutes } from "react-router-dom";
+import React from "react";
+import { Link, Outlet, useLocation,useRoutes } from "react-router-dom";
 import { RiAddLine } from "react-icons/ri";
 import { userRoutes } from "../../../utils";
 import DashboardTabLink from "../sub-components/DashboardTabLink";
-import GoBack from "../sub-components/GoBack";
 const Users = () => {
   const tabPaths = userRoutes.map(({ path }) => `/dashboard/users/${path}`);
-  const { pathname } = useLocation();
-  console.log({ pathname }, { tabPaths });
-  const headerComponent = useMemo(
-    () => (tabPaths.includes(pathname) ? <DashboardUsersHeader /> : <GoBack />),
-    [pathname]
-  );
+  const {pathname}=useLocation()
+  console.log({pathname},{tabPaths});
   return (
     <div className="w-full h-full p-6 flex flex-col items-start">
-      {headerComponent}
-      <Outlet />
-    </div>
-  );
-};
-
-export default Users;
-
-const DashboardUsersHeader = () => {
-  return (
-    <>
       <div className="w-full  flex justify-between items-center">
         <h1 className="text-4xl font-extrabold my-3 text-slate-700">Users</h1>
         <div className="flex items-center">
@@ -41,6 +25,12 @@ const DashboardUsersHeader = () => {
           <DashboardTabLink key={index} {...route} />
         ))}
       </nav>
-    </>
+      <Outlet />
+    </div>
   );
 };
+
+export default Users;
+
+
+const DashboardUsers

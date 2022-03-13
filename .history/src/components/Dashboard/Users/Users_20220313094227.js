@@ -8,10 +8,8 @@ const Users = () => {
   const tabPaths = userRoutes.map(({ path }) => `/dashboard/users/${path}`);
   const { pathname } = useLocation();
   console.log({ pathname }, { tabPaths });
-  const headerComponent = useMemo(
-    () => (tabPaths.includes(pathname) ? <DashboardUsersHeader /> : <GoBack />),
-    [pathname]
-  );
+  const headerComponent = useMemo(() => tabPaths.includes(pathname) ? <DashboardUsersHeader /> : <GoBack />;
+  , [pathname]);
   return (
     <div className="w-full h-full p-6 flex flex-col items-start">
       {headerComponent}

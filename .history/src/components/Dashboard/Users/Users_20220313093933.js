@@ -1,20 +1,15 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Link, Outlet, useLocation, useRoutes } from "react-router-dom";
 import { RiAddLine } from "react-icons/ri";
 import { userRoutes } from "../../../utils";
 import DashboardTabLink from "../sub-components/DashboardTabLink";
-import GoBack from "../sub-components/GoBack";
 const Users = () => {
   const tabPaths = userRoutes.map(({ path }) => `/dashboard/users/${path}`);
   const { pathname } = useLocation();
   console.log({ pathname }, { tabPaths });
-  const headerComponent = useMemo(
-    () => (tabPaths.includes(pathname) ? <DashboardUsersHeader /> : <GoBack />),
-    [pathname]
-  );
+  
   return (
     <div className="w-full h-full p-6 flex flex-col items-start">
-      {headerComponent}
       <Outlet />
     </div>
   );
