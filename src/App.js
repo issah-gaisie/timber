@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, Outlet } from "react-router-dom";
 import Login from "./components/Login";
 
 import Auth from "./components/Auth";
@@ -25,9 +25,20 @@ import AddANewUser from "./components/Dashboard/Users/AddANewUser";
 import UserDetails from "./components/Dashboard/Users/UserDetails";
 import EditUser from "./components/Dashboard/Users/EditUser";
 import ExportUsers from "./components/Dashboard/Users/ExportUsers";
+// All Dashboard Stock Management Routes
 import StockManagement from "./components/Dashboard/StockManagement/StockManagement";
-import ConcessionInput from "./components/Dashboard/StockManagement/ConcessionInput";
-import Compartment from "./components/Dashboard/StockManagement/Compartment";
+import AddConcession from "./components/Dashboard/StockManagement/Concession/AddConcession";
+import AddCompartment from "./components/Dashboard/StockManagement/Compartment/AddCompartment";
+import Trees from "./components/Dashboard/StockManagement/Tree/Trees";
+import AddTree from "./components/Dashboard/StockManagement/Tree/AddTree";
+import EditTree from "./components/Dashboard/StockManagement/Tree/EditTree";
+import Species from "./components/Dashboard/StockManagement/Specie/Species";
+import AddSpecie from "./components/Dashboard/StockManagement/Specie/AddSpecie";
+import EditSpecie from "./components/Dashboard/StockManagement/Specie/EditSpecie";
+import Concessions from "./components/Dashboard/StockManagement/Concession/Concessions";
+import EditConcession from "./components/Dashboard/StockManagement/Concession/EditConcession";
+import EditCompartment from "./components/Dashboard/StockManagement/Compartment/EditCompartment";
+import Compartments from "./components/Dashboard/StockManagement/Compartment/Compartments";
 
 // All Dashboard Users Routes
 function App() {
@@ -72,9 +83,30 @@ function App() {
           </Route>
           {/* Dashboard Stock Management Page */}
           <Route path="stock-management" element={<StockManagement />}>
-            <Route index element={<Navigate to="concession-input" replace />} />
-            <Route path="concession-input" element={<ConcessionInput />} />
-            <Route path="compartment" element={<Compartment />} />
+            <Route index element={<Navigate to="concession" replace />} />
+            {/* Concession */}
+            <Route path="concession" element={<OutLetShell />}>
+              <Route index element={<Concessions />} />
+              <Route path="add" element={<AddConcession />} />
+              <Route path=":id" element={<EditConcession />} />
+            </Route>
+            {/* Compartment */}
+            <Route path="compartment" element={<OutLetShell />}>
+              <Route index element={<Compartments />} />
+              <Route path="add" element={<AddCompartment />} />
+              <Route path=":id" element={<EditCompartment />} />
+            </Route>
+            {/* Trees */}
+            <Route path="trees" element={<OutLetShell />}>
+              <Route index element={<Trees />} />
+              <Route path="add" element={<AddTree />} />
+              <Route path=":id" element={<EditTree />} />
+            </Route>
+            <Route path="species" element={<OutLetShell />}>
+              <Route index element={<Species />} />
+              <Route path="add" element={<AddSpecie />} />
+              <Route path=":id" element={<EditSpecie />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
@@ -84,6 +116,12 @@ function App() {
 }
 
 export default App;
+
+const OutLetShell = () => (
+  <>
+    <Outlet />
+  </>
+);
 
 // OLD SIGN UP ROUTES
 // import Signup from "./components/Signup";

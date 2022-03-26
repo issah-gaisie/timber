@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import Input from "../../Input";
+import React from "react";
+import GoBack from "../../sub-components/GoBack";
+import { FormGrid } from "../../Users/AddANewUser";
+import Input from "../../../Input";
 import toast from "react-hot-toast";
-import { FormGrid } from "../Users/AddANewUser";
-import TextArea from "../../TextArea";
-import DocumentUpload from "../sub-components/DocumentUploads";
-const ConcessionInput = () => {
+import { useState } from "react";
+import TextArea from "../../../TextArea";
+
+const AddSpecie = () => {
   const [state, setState] = useState({
-    concessionName: "",
-    concessionSize: "",
+    speciesName: "",
+    isActive: null,
     description: "",
-    totalNumberOfTrees: "",
-    address: "",
-    permitNumber: "",
-    permitExpiryDate: "",
-    permitDocument: "",
+    numberOfTrees: "",
+    marketValue: "",
+    numberOfTreesFelled: "",
+    numberOfTreesRemaining: "",
   });
 
   const handleChange = (e) => {
@@ -43,92 +44,87 @@ const ConcessionInput = () => {
   };
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
-      <h2 className=" text-xl font-medium text-gray-700 my-2">
-        Concession Details
-      </h2>
+      <GoBack />
+      <h2 className=" text-xl font-medium text-gray-700 my-2">New Species</h2>
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
-            Concession Name
+            Species Name
           </span>
           <Input
-            placeholder="Concession Name"
+            placeholder="Species Name"
             type="text"
-            value={state.concessionName}
+            value={state.speciesName}
+          />
+        </label>
+
+        
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Number of Trees
+          </span>
+          <Input
+            placeholder="Total Number of Trees"
+            type="text"
+            value={state.numberOfTrees}
           />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
-            Concession Size
+            Market Value
           </span>
           <Input
-            placeholder="Concession Size"
+            placeholder="Market Value"
             type="text"
-            value={state.concessionSize}
+            value={state.marketValue}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Number of Trees Felled
+          </span>
+          <Input
+            placeholder="Number of Trees Felled"
+            type="text"
+            value={state.numberOfTreesFelled}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Number of Trees Remaining
+          </span>
+          <Input
+            placeholder="Number of Trees Remaining"
+            type="text"
+            value={state.numberOfTreesRemaining}
           />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Description</span>
-          <Input
+          <TextArea
             placeholder="Description"
             type="text"
             value={state.description}
           />
         </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Total Number of Trees
-          </span>
-          <Input
-            placeholder="Total Number of Trees"
-            type="email"
-            value={state.totalNumberOfTrees}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Address</span>
-          <TextArea
-            placeholder="eg: 0505707987"
-            type="text"
-            value={state.address}
-          />
-        </label>
       </FormGrid>
-      <h2 className=" text-xl font-medium text-gray-700 my-4">Permit Info</h2>
-      <FormGrid>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Permit Number
-          </span>
-          <Input
-            placeholder="Permit Number"
-            type="text"
-            value={state.permitNumber}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Permit Expiry Date
-          </span>
-          <Input
-            placeholder="Permit Expiry Date"
-            type="text"
-            value={state.permitExpiryDate}
-          />
-        </label>
-      </FormGrid>
-      <span className="block text-md  text-gray-700 mb-3 mt-4">
-        Permit Document
-      </span>
-      <DocumentUpload/>
+      <div className='mt-3'>
+        <input
+          placeholder="Number of Trees Remaining"
+          type="checkbox"
+          id="isActive"
+          value={state.isActive}
+        />
+        <span className="text-md  text-gray-700 ml-3">Active</span>
+      </div>
       <button
         type="submit"
         className="w-full sm:w-auto sm:px-3 bg-[#3e7c17] hover:bg-[#356C14] text-white font-semibold py-2 lg:py-3 my-3 rounded rounded-md self-end"
       >
-        Create Concession
+        Create Species
       </button>
     </form>
   );
 };
 
-export default ConcessionInput;
+export default AddSpecie;

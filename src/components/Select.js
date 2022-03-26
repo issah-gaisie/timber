@@ -6,7 +6,7 @@ const Select = (props) => {
         className="w-full rounded rounded-sm border border-gray-300 py-1 px-2 outline-none disabled:bg-transparent disabled:border-none disabled:px-0 disabled:py-1 disabled:text-gray-400  "
         {...props}
       >
-          <option selected disabled>Select A Concession</option>
+          <option selected disabled>{props.label?props.label:'Select A Concession'}</option>
           {props.options.map((item,index)=><option key={index} value={item.id}>{item.concessionName}</option>)}
       </select>
     );

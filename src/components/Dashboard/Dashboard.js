@@ -25,7 +25,7 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col h-screen w-screen bg-gray-100">
       {/* Dashboard Header */}
-      <header className="flex justify-between items-center h-[10vh] shadow-sm bg-white px-2 md:px-6 relative">
+      <header className="flex justify-between items-center h-[7vh] shadow-sm bg-white px-2 md:px-6 relative">
         <img src={logo} alt="tcl" className="h-10 w-auto object-contain" />
         <div className="flex justify-center items-center space-x-2 pointer">
           <div
@@ -38,9 +38,9 @@ const Dashboard = () => {
         </div>
       </header>
       {/* Dashboard Main */}
-      <main className="flex w-full h-[90vh] relative">
+      <main className="flex w-full h-[93vh] relative">
         <Sidebar />
-        <section className="w-full  h-[83vh] md:h-[88vh] scroll-smooth overflow-y-auto bg-gray-100">
+        <section className="w-full 2xl:w-4/5 p-6 xl:p-10  h-[86vh] md:h-[91vh] scroll-smooth overflow-y-auto bg-gray-100">
           <Outlet />
         </section>
         <FloatingBottomNavBar />

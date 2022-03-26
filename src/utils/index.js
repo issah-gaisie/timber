@@ -64,12 +64,20 @@ export const userRoutes = [
 
 export const stockRoutes = [
   {
-    name: "Concession Input",
-    path: "concession-input",
+    name: "Concession",
+    path: "concession",
   },
   {
     name: "Compartment",
     path: "compartment",
+  },
+  {
+    name:"Species",
+    path:'species'
+  },
+  {
+    name:"Trees",
+    path:'trees'
   },
 ];
 

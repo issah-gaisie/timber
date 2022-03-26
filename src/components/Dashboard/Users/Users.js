@@ -16,7 +16,7 @@ const Users = () => {
     [pathname]
   );
   return (
-    <div className="w-full h-full p-6 flex flex-col items-start">
+    <div className="w-full h-full flex flex-col items-start">
       {headerComponent}
       <Outlet />
     </div>

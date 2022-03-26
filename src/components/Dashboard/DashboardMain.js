@@ -48,7 +48,7 @@ const DashboardMain = () => {
   ];
 
   return (
-    <div className="w-full h-full p-6 flex flex-col items-start">
+    <div className="w-full h-full  flex flex-col items-start">
       <h1 className="text-4xl font-extrabold my-3 mb-6 text-slate-700">
         Dashboard
       </h1>
@@ -74,7 +74,7 @@ const DashboardMain = () => {
         <h3 className="text-xl font-medium my-3 mb-6 text-gray-500">
           Activity
         </h3>
-        <DataTable className="w-full" columns={columns} data={data} />
+        <DataTable className="w-full" columns={columns} data={data} pagination />
       </div>
     </div>
   );
@@ -82,14 +82,14 @@ const DashboardMain = () => {
 
 export default DashboardMain;
 
-const LabelAndValue = (props) => {
+export const LabelAndValue = (props) => {
   const { label, value, className } = props;
   const formatValue = (value) => value.toFixed(0);
   return (
     <div
-      className={`bg-white shadow-sm min-h-[5vh] rounded rounded-lg p-6 flex flex-col space-y-4 hover:shadow-md transition ease-in-out delay-150 `}
+      className={`bg-white shadow-md min-h-[5vh] rounded rounded-lg p-6 flex flex-col space-y-4 hover:shadow-lg transition ease-in-out delay-150 `}
     >
-      <span className="text-lg font-medium text-gray-300 uppercase">
+      <span className="text-base lg:text-lg font-medium text-gray-300 uppercase">
         {label}
       </span>
       <AnimatedNumber
