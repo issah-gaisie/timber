@@ -6,7 +6,8 @@ import Input from "../../../Input";
 import Select from "../../../Select";
 import TextArea from "../../../TextArea";
 import toast from "react-hot-toast";
-
+import Dropzone from "react-dropzone";
+import TreeDropzone from "./sub-components/TreeDropzone";
 const AddTree = () => {
   const [state, setstate] = useState({
     treeName: "",
@@ -18,6 +19,9 @@ const AddTree = () => {
     description: "",
     isAvailable: false,
   });
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const createUserPromise = new Promise((resolve, reject) =>
@@ -43,25 +47,13 @@ const AddTree = () => {
       <GoBack />
       <h2 className=" text-xl font-medium text-gray-700 my-2">New Tree</h2>
       <FormGrid>
-      <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Tree Name
-          </span>
-          <Input
-            placeholder="Tree Name"
-            type="text"
-            value={state.treeName}
-          />
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">Tree Name</span>
+          <Input placeholder="Tree Name" type="text" value={state.treeName} />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Tree Volume
-          </span>
-          <Input
-            placeholder="Tree Volume"
-            type="text"
-            value={state.volume}
-          />
+          <span className="block text-md  text-gray-700 mb-3">Tree Volume</span>
+          <Input placeholder="Tree Volume" type="text" value={state.volume} />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
@@ -74,9 +66,7 @@ const AddTree = () => {
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-           Concession
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Concession</span>
           <Select
             placeholder="Concession"
             type="text"
@@ -85,48 +75,42 @@ const AddTree = () => {
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-           Compartment
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Compartment</span>
           <Select
             placeholder="Compartment"
             type="text"
-            label='Select A Compartment'
+            label="Select A Compartment"
             value={state.compartmentId}
             options={[]}
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Price
-          </span>
-          <Input
-            placeholder="Price"
-            type="text"
-            value={state.price}
-          />
+          <span className="block text-md  text-gray-700 mb-3">Price</span>
+          <Input placeholder="Price" type="text" value={state.price} />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-           Description
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Description</span>
           <TextArea
             placeholder="Description"
             type="text"
             value={state.description}
           />
         </label>
-        
       </FormGrid>
-      <div className='mt-3'>
-        <input
-          placeholder="Number of Trees Remaining"
-          type="checkbox"
-          id="isActive"
-          value={state.isActive}
-        />
-        <span className="text-md  text-gray-700 ml-3">Active</span>
-      </div>
+      <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
+      {/* <div className="bg-gray-400 w-full h-[5rem] flex justify-center items-center">
+        <Dropzone>
+          {({ getRootProps, getInputProps }) => (
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here, or click to select files</p>
+            </div>
+          )}
+        </Dropzone>
+      </div> */}
+
+      <TreeDropzone/>
+
       <button
         type="submit"
         className="w-full sm:w-auto sm:px-3 bg-[#3e7c17] hover:bg-[#356C14] text-white font-semibold py-2 lg:py-3 my-3 rounded rounded-md self-end"

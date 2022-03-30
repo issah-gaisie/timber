@@ -15,6 +15,7 @@ const EditConcession = () => {
     description: "",
     totalNumberOfTrees: "",
     address: "",
+    isActive:true,
     permitNumber: "",
     permitExpiryDate: "",
     permitDocument: "",
@@ -49,7 +50,7 @@ const EditConcession = () => {
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
-      <div className="self-end">
+      <div className="flex space-x-2 self-end">
         {disabled ? (
           <div className="">
             <button
@@ -62,7 +63,7 @@ const EditConcession = () => {
             <button
               type="button"
               onClick={toggleDisable}
-              className="hidden md:block bg-gray-700 hover:bg-gray-800 py-2 px-4 text-white text-medium font-semibold shadow-lg rounded rounded-md"
+              className="hidden md:block bg-gray-700 hover:bg-gray-800 py-2 px-4 text-white text-medium font-semibold hover:shadow-md rounded rounded-md"
             >
               Edit
             </button>
@@ -85,6 +86,16 @@ const EditConcession = () => {
             </button>
           </div>
         )}
+        {state.isActive ? (
+          <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
+            - Deactivate
+          </button>
+        ) : (
+          <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
+            + Activate
+          </button>
+        )}
+
       </div>
       <h2 className=" text-xl font-medium text-gray-700 my-2">
         {disabled ? "Concession Details" : "Edit Concession"}

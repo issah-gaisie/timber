@@ -1,33 +1,38 @@
 import React from "react";
-import { useState } from "react";
 import GoBack from "../../sub-components/GoBack";
 import { FormGrid } from "../../Users/AddANewUser";
 import Input from "../../../Input";
-import Select from "../../../Select";
-import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
 import toast from "react-hot-toast";
+import { useState } from "react";
+import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
 import TextArea from "../../../TextArea";
+import TeamMemberForm from "./sub-components/TeamMemberForm";
 
-const EditTree = () => {
+const EditTeam = () => {
   const [disabled, setDisabled] = useState(true);
-  const [state, setstate] = useState({
-    treeName: "",
-    volume: "",
-    marketValue: 0.0,
-    concessionId: 0,
-    compartmentId: 0,
-    price: 0.0,
+  const [state, setState] = useState({
+    teamName: "",
+    isActive: false,
     description: "",
-    isAvailable: true,
+    managerId: "",
+    supervisorId: "",
+    driverId: "",
+    teamMembers: [],
   });
   const toggleDisable = () => setDisabled((oldState) => !oldState);
+
+  const handleChange = (e) => {
+    const { value, id } = e.target;
+    setState((oldState) => ({ ...oldState, [id]: value }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const createUserPromise = new Promise((resolve, reject) =>
+    const createTeamPromise = new Promise((resolve, reject) =>
       setTimeout(
         () =>
           resolve({
-            message: "User Created Successfully",
+            message: "Team Created Successfully",
             status: 200,
             data: [],
           }),
@@ -35,16 +40,16 @@ const EditTree = () => {
       )
     );
     // handles the toast loader for the login process
-    toast.promise(createUserPromise, {
-      loading: "Creating User",
-      success: "User Created Successfully",
-      error: "User Create Failed",
+    toast.promise(createTeamPromise, {
+      loading: "Creating Team",
+      success: "Team Created Successfully",
+      error: "Team Create Failed",
     });
   };
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
-      <div className="flex space-x-2  self-end">
+      <div className="flex space-x-2 self-end">
         {disabled ? (
           <div className="">
             <button
@@ -80,109 +85,86 @@ const EditTree = () => {
             </button>
           </div>
         )}
-        {state.isAvailable ? (
+       {state.isActive ? (
           <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
-            - Unavail
+            - Deactivate
           </button>
         ) : (
           <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
-            + Avail
+            + Activate
           </button>
         )}
       </div>
       <h2 className=" text-xl font-medium text-gray-700 my-2">
-        {disabled ? "Tree Details" : "Edit Tree"}
+        {disabled ? "Team Details" : "Edit Team"}
       </h2>
       <FormGrid>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Tree Name</span>
-          <Input
-            placeholder="Tree Name"
-            disabled={disabled}
-            type="text"
-            value={state.treeName}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Tree Volume</span>
-          <Input
-            placeholder="Tree Volume"
-            type="text"
-            disabled={disabled}
-            value={state.volume}
-          />
-        </label>
-        <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
-            Market Value
+            Team Name
           </span>
           <Input
-            placeholder="Market Value"
-            type="text"
-            disabled={disabled}
-            value={state.marketValue}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Concession</span>
-          <Select
-            placeholder="Concession"
-            type="text"
-            disabled={disabled}
-            value={state.concessionId}
-            options={[]}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Compartment</span>
-          <Select
-            placeholder="Compartment"
-            type="text"
-            disabled={disabled}
-            label="Select A Compartment"
-            value={state.compartmentId}
-            options={[]}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Price</span>
-          <Input
-            placeholder="Price"
-            type="text"
-            disabled={disabled}
-            value={state.price}
+            placeholder="Team Name"
+          disabled={disabled}
+          type="text"
+            value={state.teamName}
           />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Description</span>
           <TextArea
             placeholder="Description"
-            disabled={disabled}
-            type="text"
+          disabled={disabled}
+          type="text"
             value={state.description}
           />
         </label>
-      </FormGrid>
-      <div className={`${disabled ? "mt-0" : "mt-3"}`}>
-        <input
-          placeholder="Number of Trees Remaining"
-          type="checkbox"
-          id="isActive"
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Supervisor
+          </span>
+          <Input
+            placeholder="Supervisor"
+            type="text"
           disabled={disabled}
-          value={state.isActive}
-        />
-        <span className="text-md  text-gray-700 ml-3">Active</span>
-      </div>
+          value={state.supervisorId}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Manager
+          </span>
+          <Input
+            placeholder="Manager"
+            type="text"
+          disabled={disabled}
+          value={state.managerId}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Driver
+          </span>
+          <Input
+            placeholder="Driver"
+            type="text"
+          disabled={disabled}
+          value={state.driverId}
+          />
+        </label>
+      </FormGrid>
+      <h3 className=" text-lg font-medium text-gray-700 my-2">Team Members</h3>
+      <TeamMemberForm disabled={disabled} />
       {!disabled && (
         <button
           type="submit"
           className="w-full sm:w-auto sm:px-3 bg-[#3e7c17] hover:bg-[#356C14] text-white font-semibold py-2 lg:py-3 my-3 rounded rounded-md self-end"
         >
-          Edit Tree
+          Edit Team
         </button>
       )}
     </form>
   );
 };
 
-export default EditTree;
+export default EditTeam;

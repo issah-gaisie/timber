@@ -15,6 +15,7 @@ const EditCompartment = () => {
     concession: null,
     description: "",
     numberOfTrees: "",
+    isActive:false,
     compartmentSize: "",
   });
   const toggleDisable = () => setDisabled((oldState) => !oldState);
@@ -47,7 +48,7 @@ const EditCompartment = () => {
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
-      <div className='self-end'>
+      <div className='flex space-x-2 self-end'>
           {disabled ? (
             <div className="">
               <button
@@ -83,6 +84,16 @@ const EditCompartment = () => {
               </button>
             </div>
           )}
+       {state.isActive ? (
+          <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
+            - Deactivate
+          </button>
+        ) : (
+          <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
+            + Activate
+          </button>
+        )}
+
         </div>
       <h2 className=" text-xl font-medium text-gray-700 my-2">
         {disabled ? "Compartment Details" : "Edit Compartment"}

@@ -51,7 +51,6 @@ export default Concessions;
 
 
 
-
 const data = [
     {
       id: 1,

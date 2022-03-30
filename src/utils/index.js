@@ -79,6 +79,14 @@ export const stockRoutes = [
     name:"Trees",
     path:'trees'
   },
+  {
+    name:"Teams",
+    path:'teams'
+  },
+  {
+    name:"Products",
+    path:'products'
+  },
 ];
 
 

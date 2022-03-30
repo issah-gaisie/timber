@@ -1,33 +1,39 @@
 import React from "react";
-import { useState } from "react";
 import GoBack from "../../sub-components/GoBack";
 import { FormGrid } from "../../Users/AddANewUser";
 import Input from "../../../Input";
 import Select from "../../../Select";
-import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
+
 import toast from "react-hot-toast";
+import { useState } from "react";
+import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
 import TextArea from "../../../TextArea";
 
-const EditTree = () => {
+const EditProduct = () => {
   const [disabled, setDisabled] = useState(true);
-  const [state, setstate] = useState({
-    treeName: "",
-    volume: "",
-    marketValue: 0.0,
-    concessionId: 0,
-    compartmentId: 0,
-    price: 0.0,
+  const [state, setState] = useState({
+    speciesName: "",
+    isActive: false,
     description: "",
-    isAvailable: true,
+    numberOfTrees: "",
+    marketValue: "",
+    numberOfTreesFelled: "",
+    numberOfTreesRemaining: "",
   });
   const toggleDisable = () => setDisabled((oldState) => !oldState);
-  const handleSubmit = (e) => {
+
+  const handleChange = (e) => {
+    const { value, id } = e.target;
+    setState((oldState) => ({ ...oldState, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const createUserPromise = new Promise((resolve, reject) =>
+    const editProductPromise = new Promise((resolve, reject) =>
       setTimeout(
         () =>
           resolve({
-            message: "User Created Successfully",
+            message: "Product Edited Successfully",
             status: 200,
             data: [],
           }),
@@ -35,16 +41,17 @@ const EditTree = () => {
       )
     );
     // handles the toast loader for the login process
-    toast.promise(createUserPromise, {
-      loading: "Creating User",
-      success: "User Created Successfully",
-      error: "User Create Failed",
+    await toast.promise(editProductPromise, {
+      loading: "Editing Product",
+      success: "Product Edited Successfully",
+      error: "Product Edit Failed",
     });
+    setDisabled(true)
   };
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
-      <div className="flex space-x-2  self-end">
+      <div className="flex space-x-2 self-end">
         {disabled ? (
           <div className="">
             <button
@@ -80,109 +87,86 @@ const EditTree = () => {
             </button>
           </div>
         )}
-        {state.isAvailable ? (
+       {state.isActive ? (
           <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
-            - Unavail
+            - Deactivate
           </button>
         ) : (
           <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
-            + Avail
+            + Activate
           </button>
         )}
       </div>
       <h2 className=" text-xl font-medium text-gray-700 my-2">
-        {disabled ? "Tree Details" : "Edit Tree"}
+        {disabled ? "Product Details" : "Edit Product"}
       </h2>
       <FormGrid>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Tree Name</span>
+          <span className="block text-md  text-gray-700 mb-3">
+            Product Name
+          </span>
           <Input
-            placeholder="Tree Name"
-            disabled={disabled}
+          disabled={disabled}
+            placeholder="Product Name"
             type="text"
-            value={state.treeName}
+            value={state.productName}
           />
         </label>
+
+        
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Tree Volume</span>
+          <span className="block text-md  text-gray-700 mb-3">
+            Quantity In Stock
+          </span>
           <Input
-            placeholder="Tree Volume"
-            type="text"
-            disabled={disabled}
-            value={state.volume}
+            placeholder="Quantity In Stock"
+          disabled={disabled}
+          type="text"
+            value={state.quantityInStock}
           />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
-            Market Value
+            Price
           </span>
           <Input
             placeholder="Market Value"
-            type="text"
-            disabled={disabled}
-            value={state.marketValue}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Concession</span>
-          <Select
-            placeholder="Concession"
-            type="text"
-            disabled={disabled}
-            value={state.concessionId}
-            options={[]}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Compartment</span>
-          <Select
-            placeholder="Compartment"
-            type="text"
-            disabled={disabled}
-            label="Select A Compartment"
-            value={state.compartmentId}
-            options={[]}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Price</span>
-          <Input
-            placeholder="Price"
-            type="text"
-            disabled={disabled}
+          disabled={disabled}
+          type="text"
             value={state.price}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Product Type
+          </span>
+          <Select
+            label='Select A Product'
+          disabled={disabled}
+          options={[]}
+            value={state.productType}
           />
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Description</span>
           <TextArea
             placeholder="Description"
-            disabled={disabled}
-            type="text"
+          disabled={disabled}
+          type="text"
             value={state.description}
           />
         </label>
       </FormGrid>
-      <div className={`${disabled ? "mt-0" : "mt-3"}`}>
-        <input
-          placeholder="Number of Trees Remaining"
-          type="checkbox"
-          id="isActive"
-          disabled={disabled}
-          value={state.isActive}
-        />
-        <span className="text-md  text-gray-700 ml-3">Active</span>
-      </div>
       {!disabled && (
         <button
           type="submit"
           className="w-full sm:w-auto sm:px-3 bg-[#3e7c17] hover:bg-[#356C14] text-white font-semibold py-2 lg:py-3 my-3 rounded rounded-md self-end"
         >
-          Edit Tree
+          Edit Product
         </button>
       )}
     </form>
   );
 };
 
-export default EditTree;
+export default EditProduct;

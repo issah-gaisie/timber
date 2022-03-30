@@ -39,6 +39,12 @@ import Concessions from "./components/Dashboard/StockManagement/Concession/Conce
 import EditConcession from "./components/Dashboard/StockManagement/Concession/EditConcession";
 import EditCompartment from "./components/Dashboard/StockManagement/Compartment/EditCompartment";
 import Compartments from "./components/Dashboard/StockManagement/Compartment/Compartments";
+import Products from "./components/Dashboard/StockManagement/Product/Products";
+import AddProduct from "./components/Dashboard/StockManagement/Product/AddProduct";
+import EditProduct from "./components/Dashboard/StockManagement/Product/EditProduct";
+import Teams from "./components/Dashboard/StockManagement/Team/Teams";
+import AddTeam from "./components/Dashboard/StockManagement/Team/AddTeam";
+import EditTeam from "./components/Dashboard/StockManagement/Team/EditTeam";
 
 // All Dashboard Users Routes
 function App() {
@@ -106,6 +112,16 @@ function App() {
               <Route index element={<Species />} />
               <Route path="add" element={<AddSpecies />} />
               <Route path=":id" element={<EditSpecies />} />
+            </Route>
+            <Route path="products" element={<OutLetShell />}>
+              <Route index element={<Products />} />
+              <Route path="add" element={<AddProduct />} />
+              <Route path=":id" element={<EditProduct />} />
+            </Route>
+            <Route path="teams" element={<OutLetShell />}>
+              <Route index element={<Teams />} />
+              <Route path="add" element={<AddTeam />} />
+              <Route path=":id" element={<EditTeam />} />
             </Route>
           </Route>
         </Route>

@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import manCTimber from "../../../assets/man_cutting_timber.jpg";
 import { testUsers } from "../../../utils";
 import Input from "../../Input";
-import Select from "react-select";
+// import Select from "react-select";
 import RoleForm from "./sub-components/RoleForm";
 
 const UserDetails = () => {

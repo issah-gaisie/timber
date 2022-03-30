@@ -6,20 +6,24 @@ import { useNavigate } from "react-router-dom";
 import Search from "../sub-components/Search";
 import TableActions from "../sub-components/TableActions";
 
-const Species = () => {
+const Products = () => {
   const navigate=useNavigate()
-  const speciesColumns = [
+  const productColumns = [
     {
       name: "Name",
-      selector: (row) => row.speciesName,
+      selector: (row) => row.productName,
     },
     {
       name: "Description",
       selector: (row) => row.description,
     },
     {
-      name: "Number Of Trees",
-      selector: (row) => row.numberOfTrees,
+      name: "Price",
+      selector: (row) => `GHS ${row.price}.00`,
+    },
+    {
+      name: "Quantity In Stock",
+      selector: (row) => row.quantityInStock,
     },
     {
       name: "Active",
@@ -28,7 +32,7 @@ const Species = () => {
     {
       name:'Actions',
       selector:(row)=><div>
-        <TableActions viewAction={()=>navigate(`${row.id}`)} deleteAction={()=>window.confirm(`Are you sure you want to delete this species`)} />
+        <TableActions viewAction={()=>navigate(`${row.id}`)} deleteAction={()=>window.confirm(`Are you sure you want to delete this Product`)} />
       </div>
     }
   
@@ -39,7 +43,7 @@ const Species = () => {
       <Search/>
       <DataTable
         className="w-full rounded rounded-lg"
-        columns={speciesColumns}
+        columns={productColumns}
         data={data}
         pagination
       />
@@ -47,57 +51,64 @@ const Species = () => {
   );
 };
 
-export default Species;
+export default Products;
 
 
 const data = [
   {
     id: 1,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    quantityInStock: 123,
+    price: 123,
     isActive: true,
   },
   {
     id: 2,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    quantityInStock: 123,
+    price: 123,
     isActive: true,
   },
   {
     id: 3,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    price: 123,
+    quantityInStock: 123,
     isActive: false,
   },
   {
     id: 4,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    price: 123,
+    quantityInStock: 123,
     isActive: true,
   },
   {
     id: 5,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    price: 123,
+    quantityInStock: 123,
     isActive: false,
   },
   {
     id: 6,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123,
+    productName: "A Product",
+    description: "Product Description",
+    price: 123,
+    quantityInStock: 123,
     isActive: true,
   },
   {
     id: 7,
-    speciesName: "A Species",
-    description: "Species Description",
-    numberOfTrees: 123.0,
+    productName: "A Product",
+    description: "Product Description",
+    price: 123,
+    quantityInStock:123,
     isActive: false,
   },
 ];

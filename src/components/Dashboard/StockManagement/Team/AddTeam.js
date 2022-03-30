@@ -5,16 +5,17 @@ import Input from "../../../Input";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import TextArea from "../../../TextArea";
+import TeamMemberForm from "./sub-components/TeamMemberForm";
 
-const AddSpecie = () => {
+const AddTeam = () => {
   const [state, setState] = useState({
-    speciesName: "",
-    isActive: null,
+    teamName: "",
+    isActive: false,
     description: "",
-    numberOfTrees: "",
-    marketValue: "",
-    numberOfTreesFelled: "",
-    numberOfTreesRemaining: "",
+    managerId: "",
+    supervisorId: "",
+    driverId: "",
+    teamMembers: [],
   });
 
   const handleChange = (e) => {
@@ -45,58 +46,16 @@ const AddSpecie = () => {
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
-      <h2 className=" text-xl font-medium text-gray-700 my-2">New Species</h2>
+      <h2 className=" text-xl font-medium text-gray-700 my-2">New Team</h2>
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">
-            Species Name
+            Team Name
           </span>
           <Input
-            placeholder="Species Name"
+            placeholder="Team Name"
             type="text"
-            value={state.speciesName}
-          />
-        </label>
-
-        
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Number of Trees
-          </span>
-          <Input
-            placeholder="Total Number of Trees"
-            type="text"
-            value={state.numberOfTrees}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Market Value
-          </span>
-          <Input
-            placeholder="Market Value"
-            type="text"
-            value={state.marketValue}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Number of Trees Felled
-          </span>
-          <Input
-            placeholder="Number of Trees Felled"
-            type="text"
-            value={state.numberOfTreesFelled}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Number of Trees Remaining
-          </span>
-          <Input
-            placeholder="Number of Trees Remaining"
-            type="text"
-            value={state.numberOfTreesRemaining}
+            value={state.teamName}
           />
         </label>
         <label className="block">
@@ -107,7 +66,40 @@ const AddSpecie = () => {
             value={state.description}
           />
         </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Supervisor
+          </span>
+          <Input
+            placeholder="Supervisor"
+            type="text"
+            value={state.supervisorId}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Manager
+          </span>
+          <Input
+            placeholder="Manager"
+            type="text"
+            value={state.managerId}
+          />
+        </label>
+        <label className="block">
+          <span className="block text-md  text-gray-700 mb-3">
+            Driver
+          </span>
+          <Input
+            placeholder="Driver"
+            type="text"
+            value={state.driverId}
+          />
+        </label>
       </FormGrid>
+      <h3 className=" text-lg font-medium text-gray-700 my-2">Team Members</h3>
+      <TeamMemberForm disabled={false} />
+
       {/* <div className='mt-3'>
         <input
           placeholder="Number of Trees Remaining"
@@ -121,10 +113,10 @@ const AddSpecie = () => {
         type="submit"
         className="w-full sm:w-auto sm:px-3 bg-[#3e7c17] hover:bg-[#356C14] text-white font-semibold py-2 lg:py-3 my-3 rounded rounded-md self-end"
       >
-        Create Species
+        Create Team
       </button>
     </form>
   );
 };
 
-export default AddSpecie;
+export default AddTeam;

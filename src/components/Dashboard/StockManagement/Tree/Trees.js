@@ -10,6 +10,10 @@ const Trees = () => {
   const navigate=useNavigate()
   const treeColumns = [
     {
+      name: "Tree Code",
+      selector: (row) => row.treeCode,
+    },
+    {
       name: "Name",
       selector: (row) => row.treeName,
     },
@@ -54,11 +58,11 @@ const Trees = () => {
 export default Trees;
 
 
-
 const data = [
   {
     id: 1,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: true,
@@ -66,6 +70,7 @@ const data = [
   {
     id: 2,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: true,
@@ -73,6 +78,7 @@ const data = [
   {
     id: 3,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: false,
@@ -80,6 +86,7 @@ const data = [
   {
     id: 4,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: true,
@@ -87,6 +94,7 @@ const data = [
   {
     id: 5,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: false,
@@ -94,6 +102,7 @@ const data = [
   {
     id: 6,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: true,
@@ -101,6 +110,7 @@ const data = [
   {
     id: 7,
     treeName: "Timber Tree",
+    treeCode:'code',
     description: "A beautiful Tree",
     price: 123.0,
     isAvailable: false,
