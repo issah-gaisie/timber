@@ -20,8 +20,8 @@ export const dashboardNavigation = [
   },
   {
     name: "Orders",
-    IconFilled: (props) => <RiShoppingCartFill {...props} />,
-    Icon: (props) => <RiShoppingCartLine {...props} />,
+    IconFilled: (props) => <Ri {...props} />,
+    Icon: (props) => <HiOutlineUsers {...props} />,
     path: "orders",
   },
   {

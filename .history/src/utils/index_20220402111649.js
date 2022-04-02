@@ -6,7 +6,7 @@ import {
   RiDatabaseFill,
   RiDatabaseLine,
   RiShoppingCartLine,
-  RiShoppingCartFill
+  
 } from "react-icons/ri";
 import { HiUsers, HiOutlineUsers } from "react-icons/hi";
 import manCTimber from "../assets/man_cutting_timber.jpg";
@@ -19,22 +19,16 @@ export const dashboardNavigation = [
     path: "main",
   },
   {
-    name: "Orders",
-    IconFilled: (props) => <RiShoppingCartFill {...props} />,
-    Icon: (props) => <RiShoppingCartLine {...props} />,
-    path: "orders",
+    name: "Users",
+    IconFilled: (props) => <HiUsers {...props} />,
+    Icon: (props) => <HiOutlineUsers {...props} />,
+    path: "users",
   },
   {
     name: "Stock Management",
     IconFilled: (props) => <RiDatabaseFill {...props} />,
     Icon: (props) => <RiDatabaseLine {...props} />,
     path: "stock-management",
-  },
-  {
-    name: "Users",
-    IconFilled: (props) => <HiUsers {...props} />,
-    Icon: (props) => <HiOutlineUsers {...props} />,
-    path: "users",
   },
   {
     name: "Profile",

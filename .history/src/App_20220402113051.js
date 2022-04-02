@@ -51,8 +51,6 @@ import ProductTypes from "./components/Dashboard/StockManagement/ProductType/Pro
 import AddProductType from "./components/Dashboard/StockManagement/ProductType/AddProductType";
 import EditProductType from "./components/Dashboard/StockManagement/ProductType/EditProductType";
 import Orders from "./components/Dashboard/Orders/Orders";
-import AllOrders from "./components/Dashboard/Orders/AllOrders";
-import OrderDetails from "./components/Dashboard/Orders/OrderDetails";
 
 // All Dashboard Users Routes
 function App() {
@@ -101,8 +99,8 @@ function App() {
           {/* Dashboard Order Section */}
           <Route path="orders" element={<Orders />}>
             <Route index element={<Navigate to="all" replace />} />
-            <Route path="all" element={<AllOrders />} />
-            <Route path=":id" element={<OrderDetails />} />
+            <Route path="all" element={<PersonalDetails />} />
+            <Route path="change-password" element={<ChangePassword />} />
           </Route>
           {/* Dashboard Stock Management Section */}
           <Route path="stock-management" element={<StockManagement />}>

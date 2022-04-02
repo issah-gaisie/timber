@@ -18,23 +18,12 @@ export const dashboardNavigation = [
     Icon: (props) => <RiDashboardLine {...props} />,
     path: "main",
   },
-  {
-    name: "Orders",
-    IconFilled: (props) => <RiShoppingCartFill {...props} />,
-    Icon: (props) => <RiShoppingCartLine {...props} />,
-    path: "orders",
-  },
+  
   {
     name: "Stock Management",
     IconFilled: (props) => <RiDatabaseFill {...props} />,
     Icon: (props) => <RiDatabaseLine {...props} />,
     path: "stock-management",
-  },
-  {
-    name: "Users",
-    IconFilled: (props) => <HiUsers {...props} />,
-    Icon: (props) => <HiOutlineUsers {...props} />,
-    path: "users",
   },
   {
     name: "Profile",

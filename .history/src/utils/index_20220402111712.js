@@ -19,10 +19,10 @@ export const dashboardNavigation = [
     path: "main",
   },
   {
-    name: "Orders",
-    IconFilled: (props) => <RiShoppingCartFill {...props} />,
-    Icon: (props) => <RiShoppingCartLine {...props} />,
-    path: "orders",
+    name: "Users",
+    IconFilled: (props) => <HiUsers {...props} />,
+    Icon: (props) => <HiOutlineUsers {...props} />,
+    path: "users",
   },
   {
     name: "Stock Management",
