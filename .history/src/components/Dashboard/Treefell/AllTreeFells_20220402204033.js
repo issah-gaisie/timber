@@ -17,13 +17,17 @@ const AllTreeFells = () => {
       selector: (row) => row.description,
     },
     {
-      name: "Status",
-      selector: (row) => row.status,
-    },
-    {
-      name: "Total Quantity",
-      selector: (row) => row.totalQuantity,
-    },
+        name: "Status",
+        selector: (row) => row.status,
+      },
+      {
+        name: "Number of Products",
+        selector: (row) => row.numberOfProducts,
+      },
+      {
+        name: "Total Quantity",
+        selector: (row) => row.totalQuantity,
+      },
     {
       name: "Actions",
       selector: (row) => (
@@ -52,25 +56,26 @@ const AllTreeFells = () => {
 export default AllTreeFells;
 
 const data = [
-  {
-    id: 1,
-    treeFellCode: "treefell-234tvd",
-    description: "treefell Description",
-    status: "completed",
-    totalQuantity: 130,
-  },
-  {
-    id: 2,
-    treeFellCode: "treefell-234tvd45",
-    description: "treefell Description",
-    status: "completed",
-    totalQuantity: 130,
-  },
-  {
-    id: 3,
-    treeFellCode: "treefell-234t5jvd",
-    description: "TreeFell Description",
-    status: "completed",
-    totalQuantity: 130,
-  },
-];
+    {
+      id: 1,
+      treeFellCode: "order-234tvd",
+      description: "Order Description",
+      status:'completed',
+      totalQuantity:130, 
+    },
+    {
+      id: 2,
+      treeFellCode: "order-234tvd45",
+      description: "Order Description",
+      status:'completed',
+      totalQuantity:130,
+      
+    },
+    {
+      id: 3,
+      treeFellCode: "order-234t5jvd",
+      description: "Order Description",
+      status:'completed',
+      totalQuantity:130,
+    },
+  ];
