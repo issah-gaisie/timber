@@ -53,9 +53,6 @@ import EditProductType from "./components/Dashboard/StockManagement/ProductType/
 import Orders from "./components/Dashboard/Orders/Orders";
 import AllOrders from "./components/Dashboard/Orders/AllOrders";
 import OrderDetails from "./components/Dashboard/Orders/OrderDetails";
-import Treefells from "./components/Dashboard/Treefell/Treefells";
-import AllTreeFells from "./components/Dashboard/Treefell/AllTreeFells";
-import TreeFellDetails from "./components/Dashboard/Treefell/TreeFellDetails";
 
 // All Dashboard Users Routes
 function App() {
@@ -108,10 +105,10 @@ function App() {
             <Route path=":id" element={<OrderDetails />} />
           </Route>
           {/* Dashboard Tree Fell Section */}
-          <Route path="tree-fell" element={<Treefells />}>
+          <Route path="tree-fell" element={<Orders />}>
             <Route index element={<Navigate to="all" replace />} />
-            <Route path="all" element={<AllTreeFells />} />
-            <Route path=":id" element={<TreeFellDetails />} />
+            <Route path="all" element={<Treef />} />
+            <Route path=":id" element={<OrderDetails />} />
           </Route>
           {/* Dashboard Stock Management Section */}
           <Route path="stock-management" element={<StockManagement />}>

@@ -29,7 +29,7 @@ export const dashboardNavigation = [
   {
     name: "Tree Fell",
     IconFilled: (props) => <GiLogging {...props} />,
-    Icon: (props) => <BsTree {...props} />,
+    Icon: (props) => <RiDatabaseLine {...props} />,
     path: "tree-fell",
   },
   {

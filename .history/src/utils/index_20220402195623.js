@@ -10,7 +10,7 @@ import {
 } from "react-icons/ri";
 import { HiUsers, HiOutlineUsers } from "react-icons/hi";
 import {BsTree} from 'react-icons/bs'
-import {GiLogging} from 'react-icons/gi'
+import {}
 import manCTimber from "../assets/man_cutting_timber.jpg";
 // sidebar utils
 export const dashboardNavigation = [
@@ -25,12 +25,6 @@ export const dashboardNavigation = [
     IconFilled: (props) => <RiShoppingCartFill {...props} />,
     Icon: (props) => <RiShoppingCartLine {...props} />,
     path: "orders",
-  },
-  {
-    name: "Tree Fell",
-    IconFilled: (props) => <GiLogging {...props} />,
-    Icon: (props) => <BsTree {...props} />,
-    path: "tree-fell",
   },
   {
     name: "Stock Management",

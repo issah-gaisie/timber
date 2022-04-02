@@ -27,12 +27,6 @@ export const dashboardNavigation = [
     path: "orders",
   },
   {
-    name: "Tree Fell",
-    IconFilled: (props) => <GiLogging {...props} />,
-    Icon: (props) => <BsTree {...props} />,
-    path: "tree-fell",
-  },
-  {
     name: "Stock Management",
     IconFilled: (props) => <RiDatabaseFill {...props} />,
     Icon: (props) => <RiDatabaseLine {...props} />,
