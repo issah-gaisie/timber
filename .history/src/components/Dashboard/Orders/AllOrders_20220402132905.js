@@ -52,7 +52,9 @@ const AllOrders = () => {
         <div>
           <TableActions
             viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
-            noDelete
+            deleteAction={() =>
+              window.confirm(`Are you sure you want to delete this compartment`)
+            }
           />
         </div>
       ),

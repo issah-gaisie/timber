@@ -16,7 +16,7 @@ const AllOrders = () => {
   }, [shouldFilter,filter]);
 
   const toggleShouldFilter = () => setShouldFilter((prevState) => !prevState);
-  const orderColumns = [
+  const compartmentColumns = [
     {
       name: "Number",
       selector: (row) => row.orderNumber,
@@ -25,18 +25,6 @@ const AllOrders = () => {
       name: "Description",
       selector: (row) => row.description,
     },
-    {
-        name: "Status",
-        selector: (row) => row.status,
-      },
-      {
-        name: "Number of Products",
-        selector: (row) => row.numberOfProducts,
-      },
-      {
-        name: "Total Amount",
-        selector: (row) =>` GHS ${ row.totalAmount}`,
-      },
     // {
     //   name: "Active",
     //   selector: (row) =>
@@ -52,7 +40,9 @@ const AllOrders = () => {
         <div>
           <TableActions
             viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
-            noDelete
+            deleteAction={() =>
+              window.confirm(`Are you sure you want to delete this compartment`)
+            }
           />
         </div>
       ),
@@ -70,7 +60,7 @@ const AllOrders = () => {
       <Search placeholder="Search Orders" />
       <DataTable
         className="w-full rounded rounded-lg"
-        columns={orderColumns}
+        columns={compartmentColumns}
         data={data}
         pagination
       />
@@ -86,8 +76,6 @@ const data = [
     orderNumber: "order-234tvd",
     description: "Order Description",
     status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: true,
   },
   {
@@ -95,8 +83,6 @@ const data = [
     orderNumber: "order-234tvd45",
     description: "Order Description",
     status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: true,
   },
   {
@@ -104,8 +90,6 @@ const data = [
     orderNumber: "order-234t5jvd",
     description: "Order Description",
     status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: false,
   },
 ];

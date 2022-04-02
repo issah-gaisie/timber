@@ -9,34 +9,22 @@ import { useEffect } from "react";
 const AllOrders = () => {
   const navigate = useNavigate();
   const [shouldFilter, setShouldFilter] = useState(false);
-  const [filter, setFilter] = useState(0);
+  const [filter, setFilter] = useState(");
 
   useEffect(() => {
       console.log({shouldFilter},{filter})
   }, [shouldFilter,filter]);
 
   const toggleShouldFilter = () => setShouldFilter((prevState) => !prevState);
-  const orderColumns = [
+  const compartmentColumns = [
     {
-      name: "Number",
-      selector: (row) => row.orderNumber,
+      name: "Name",
+      selector: (row) => row.orderName,
     },
     {
       name: "Description",
       selector: (row) => row.description,
     },
-    {
-        name: "Status",
-        selector: (row) => row.status,
-      },
-      {
-        name: "Number of Products",
-        selector: (row) => row.numberOfProducts,
-      },
-      {
-        name: "Total Amount",
-        selector: (row) =>` GHS ${ row.totalAmount}`,
-      },
     // {
     //   name: "Active",
     //   selector: (row) =>
@@ -52,7 +40,9 @@ const AllOrders = () => {
         <div>
           <TableActions
             viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
-            noDelete
+            deleteAction={() =>
+              window.confirm(`Are you sure you want to delete this compartment`)
+            }
           />
         </div>
       ),
@@ -70,7 +60,7 @@ const AllOrders = () => {
       <Search placeholder="Search Orders" />
       <DataTable
         className="w-full rounded rounded-lg"
-        columns={orderColumns}
+        columns={compartmentColumns}
         data={data}
         pagination
       />
@@ -83,29 +73,20 @@ export default AllOrders;
 const data = [
   {
     id: 1,
-    orderNumber: "order-234tvd",
+    orderName: "An Order",
     description: "Order Description",
-    status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: true,
   },
   {
     id: 2,
-    orderNumber: "order-234tvd45",
+    orderName: "An Order",
     description: "Order Description",
-    status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: true,
   },
   {
     id: 3,
-    orderNumber: "order-234t5jvd",
+    orderName: "An Order",
     description: "Order Description",
-    status:'completed',
-    numberOfProducts:13,
-    totalAmount:130,
     isActive: false,
   },
 ];

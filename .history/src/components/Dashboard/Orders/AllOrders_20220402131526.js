@@ -16,7 +16,7 @@ const AllOrders = () => {
   }, [shouldFilter,filter]);
 
   const toggleShouldFilter = () => setShouldFilter((prevState) => !prevState);
-  const orderColumns = [
+  const compartmentColumns = [
     {
       name: "Number",
       selector: (row) => row.orderNumber,
@@ -35,7 +35,7 @@ const AllOrders = () => {
       },
       {
         name: "Total Amount",
-        selector: (row) =>` GHS ${ row.totalAmount}`,
+        selector: (row) => row.total,
       },
     // {
     //   name: "Active",
@@ -52,7 +52,9 @@ const AllOrders = () => {
         <div>
           <TableActions
             viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
-            noDelete
+            deleteAction={() =>
+              window.confirm(`Are you sure you want to delete this compartment`)
+            }
           />
         </div>
       ),
@@ -70,7 +72,7 @@ const AllOrders = () => {
       <Search placeholder="Search Orders" />
       <DataTable
         className="w-full rounded rounded-lg"
-        columns={orderColumns}
+        columns={compartmentColumns}
         data={data}
         pagination
       />

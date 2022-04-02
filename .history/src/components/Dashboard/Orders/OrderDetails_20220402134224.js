@@ -18,10 +18,9 @@ const OrderDetails = () => {
     email:'tcl@gmail.com',
     phoneNumber:'0200033400',
     currencyId:3,
-    vatAmount:4,
-    contractNumber:'23456',
-    contractDocumentUrl:'https://contractdocurl.com',
-    contractDocumentFile:File,
+    <vatAmount:45></vatAmount:45>
+
+    isActive: true,
   });
   return (
     <div className="w-full">

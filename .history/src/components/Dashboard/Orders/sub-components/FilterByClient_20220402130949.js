@@ -5,7 +5,7 @@ import Select from 'react-select';
 const testClients = [
     { label: "Ernest", value: 1 },
     { label: "Earnest", value: 2 },
-    { label: "Ear-nest", value: 3 },
+    { label: "Ear-nest", value: "Ear-nest" },
   ];
 
 
@@ -16,7 +16,7 @@ const FilterByClient = ({
     shouldFilter,
   }) => {
     const cancelFiltersHandler = async () => {
-      await changeHandler(0);
+      await changeHandler("");
       toggleFilters();
     };
     return (

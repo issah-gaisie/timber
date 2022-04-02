@@ -10,23 +10,13 @@ const OrderDetails = () => {
     description: "Order Description",
     status: "completed",
     numberOfProducts: 13,
-    deliveryAddress:'Delivery Address',
     totalAmount: 130,
-    destinationCountryId:2,
-    comment:'',
-    dispatchTypeId:3,
-    email:'tcl@gmail.com',
-    phoneNumber:'0200033400',
-    currencyId:3,
-    vatAmount:4,
-    contractNumber:'23456',
-    contractDocumentUrl:'https://contractdocurl.com',
-    contractDocumentFile:File,
+    isActive: true,
   });
   return (
     <div className="w-full">
       <GoBack />
-      <h1 className="text-3xl uppercase font-extrabold my-3 text-gray-600">#{state.orderNumber}</h1>
+      <h1 className="text-4xl"></h1>
       <OrderItems/>
     </div>
   );

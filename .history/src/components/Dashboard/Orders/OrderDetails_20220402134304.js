@@ -20,8 +20,7 @@ const OrderDetails = () => {
     currencyId:3,
     vatAmount:4,
     contractNumber:'23456',
-    contractDocumentUrl:'https://contractdocurl.com',
-    contractDocumentFile:File,
+    contractDocumentUrl:
   });
   return (
     <div className="w-full">

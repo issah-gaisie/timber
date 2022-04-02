@@ -5,7 +5,7 @@ const TableActions = ({ viewAction, deleteAction, noView, noDelete }) => {
     <div className="border border-gray-400 rounded rounded-lg">
       {!noView && (
         <button
-          className={`text-gray-500 px-2 py-1 ${noDelete?'':'first:border-r first:border-gray-400'} hover:bg-gray-700 hover:text-white`}
+          className={`text-gray-500 px-2 py-1 first:border-r first:border-gray-400 hover:bg-gray-700 hover:text-white`}
           onClick={viewAction}
         >
           <FiEye />

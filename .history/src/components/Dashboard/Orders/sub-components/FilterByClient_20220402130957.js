@@ -16,7 +16,7 @@ const FilterByClient = ({
     shouldFilter,
   }) => {
     const cancelFiltersHandler = async () => {
-      await changeHandler(0);
+      await changeHandler("");
       toggleFilters();
     };
     return (

@@ -10,18 +10,9 @@ const OrderDetails = () => {
     description: "Order Description",
     status: "completed",
     numberOfProducts: 13,
-    deliveryAddress:'Delivery Address',
+    deliveryAddress:'Delivery Address'
     totalAmount: 130,
-    destinationCountryId:2,
-    comment:'',
-    dispatchTypeId:3,
-    email:'tcl@gmail.com',
-    phoneNumber:'0200033400',
-    currencyId:3,
-    vatAmount:4,
-    contractNumber:'23456',
-    contractDocumentUrl:'https://contractdocurl.com',
-    contractDocumentFile:File,
+    isActive: true,
   });
   return (
     <div className="w-full">
