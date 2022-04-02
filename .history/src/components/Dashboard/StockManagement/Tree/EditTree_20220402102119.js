@@ -7,8 +7,6 @@ import Select from "../../../Select";
 import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
 import toast from "react-hot-toast";
 import TextArea from "../../../TextArea";
-import TreeDropzone from "./sub-components/TreeDropzone";
-import manCuttingTimber from "../../../../assets/man_cutting_timber.jpg";
 
 const EditTree = () => {
   const [disabled, setDisabled] = useState(true);
@@ -83,17 +81,11 @@ const EditTree = () => {
           </div>
         )}
         {state.isAvailable ? (
-          <button
-            type="button"
-            className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50"
-          >
+          <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
             - Unavail
           </button>
         ) : (
-          <button
-            type="button"
-            className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50"
-          >
+          <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
             + Avail
           </button>
         )}
@@ -171,21 +163,18 @@ const EditTree = () => {
           />
         </label>
       </FormGrid>
-
+      <div className={`${disabled ? "mt-0" : "mt-3"}`}>
+        <input
+          placeholder="Number of Trees Remaining"
+          type="checkbox"
+          id="isActive"
+          disabled={disabled}
+          value={state.isActive}
+        />
+        <span className="text-md  text-gray-700 ml-3">Active</span>
+      </div>
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
-      {disabled && (
-        <div className="flex flex-wrap w-full ">
-          {dummyImages.map((image, index) => (
-            <img
-              src={image}
-              key={index}
-              alt=""
-              className="object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
-            />
-          ))}
-        </div>
-      )}
-      {!disabled && <TreeDropzone />}
+        <TreeDropzone/>
       {!disabled && (
         <button
           type="submit"
@@ -199,5 +188,3 @@ const EditTree = () => {
 };
 
 export default EditTree;
-
-const dummyImages = [manCuttingTimber, manCuttingTimber, manCuttingTimber];

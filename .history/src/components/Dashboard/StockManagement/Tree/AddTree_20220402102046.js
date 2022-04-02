@@ -98,6 +98,7 @@ const AddTree = () => {
         </label>
       </FormGrid>
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
+
       <TreeDropzone/>
 
       <button

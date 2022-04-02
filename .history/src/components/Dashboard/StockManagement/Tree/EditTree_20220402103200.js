@@ -173,18 +173,16 @@ const EditTree = () => {
       </FormGrid>
 
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
-      {disabled && (
-        <div className="flex flex-wrap w-full ">
-          {dummyImages.map((image, index) => (
-            <img
-              src={image}
-              key={index}
-              alt=""
-              className="object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
-            />
-          ))}
-        </div>
-      )}
+      <div className="flex flex-wrap w-full ">
+        {dummyImages.map((image, index) => (
+          <img
+            src={image}
+            key={index}
+            alt=""
+            className="object-cover w-32 h-32 shrink-0 first:ml-0 m-2 rounded rounded-lg"
+          />
+        ))}
+      </div>
       {!disabled && <TreeDropzone />}
       {!disabled && (
         <button

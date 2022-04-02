@@ -180,7 +180,7 @@ const EditTree = () => {
               src={image}
               key={index}
               alt=""
-              className="object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
+              className="object-cover w-32 h-32 shrink-0 first:ml-0 m-2 rounded rounded-lg"
             />
           ))}
         </div>
