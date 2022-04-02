@@ -60,14 +60,7 @@ export const userRoutes = [
     name: "Deactivated Users",
     path: "deactivated",
   },
-  {
-    name: "Client Users",
-    path: "client",
-  },
-  {
-    name: "Internal Users",
-    path: "internal",
-  },
+  
 ];
 
 export const stockRoutes = [
@@ -80,22 +73,25 @@ export const stockRoutes = [
     path: "compartment",
   },
   {
-    name: "Species",
-    path: "species",
+    name:"Species",
+    path:'species'
   },
   {
-    name: "Trees",
-    path: "trees",
+    name:"Trees",
+    path:'trees'
   },
   {
-    name: "Teams",
-    path: "teams",
+    name:"Teams",
+    path:'teams'
   },
   {
-    name: "Products",
-    path: "products",
+    name:"Products",
+    path:'products'
   },
 ];
+
+
+
 
 // test users
 export const testUsers = [
@@ -123,7 +119,7 @@ export const testUsers = [
     location: "Nungua",
     address1: "Nungua Barrier",
     address2: "Nungua Second",
-    role: "Client User",
+    role: "Internal User",
     profileImage: manCTimber,
     active: false,
   },
@@ -143,15 +139,10 @@ export const testUsers = [
   },
 ];
 
-export const userRoles = {
-  CLIENT: "Client User",
-  INTERNAL: "Internal User",
-  ADMIN: "Admin",
-};
 
-export const testConcessions = [
+export const testConcessions=[
   {
-    id: 1,
+    id:1,
     concessionName: "concession1",
     concessionSize: "10sqm",
     description: "A large concession",
@@ -162,7 +153,7 @@ export const testConcessions = [
     permitDocument: ".docsx",
   },
   {
-    id: 2,
+    id:2,
     concessionName: "concession2",
     concessionSize: "10sqm",
     description: "A large concession",
@@ -171,9 +162,8 @@ export const testConcessions = [
     permitNumber: "123456",
     permitExpiryDate: new Date().toISOString(),
     permitDocument: ".docsx",
-  },
-  {
-    id: 3,
+  },{
+    id:3,
     concessionName: "concession3",
     concessionSize: "10sqm",
     description: "A large concession",
@@ -182,9 +172,8 @@ export const testConcessions = [
     permitNumber: "123456",
     permitExpiryDate: new Date().toISOString(),
     permitDocument: ".docsx",
-  },
-  {
-    id: 4,
+  },{
+    id:4,
     concessionName: "concession4",
     concessionSize: "10sqm",
     description: "A large concession",
@@ -193,9 +182,8 @@ export const testConcessions = [
     permitNumber: "123456",
     permitExpiryDate: new Date().toISOString(),
     permitDocument: ".docsx",
-  },
-  {
-    id: 5,
+  },{
+    id:5,
     concessionName: "concession5",
     concessionSize: "10sqm",
     description: "A large concession",
@@ -205,4 +193,4 @@ export const testConcessions = [
     permitExpiryDate: new Date().toISOString(),
     permitDocument: ".docsx",
   },
-];
+]

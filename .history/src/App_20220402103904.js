@@ -46,7 +46,6 @@ import Teams from "./components/Dashboard/StockManagement/Team/Teams";
 import AddTeam from "./components/Dashboard/StockManagement/Team/AddTeam";
 import EditTeam from "./components/Dashboard/StockManagement/Team/EditTeam";
 import ClientUsers from "./components/Dashboard/Users/ClientUsers";
-import InternalUsers from "./components/Dashboard/Users/InternalUsers";
 
 // All Dashboard Users Routes
 function App() {
@@ -79,7 +78,7 @@ function App() {
             <Route path="active" element={<ActiveUsers />} />
             <Route path="deactivated" element={<DeactivatedUsers />} />
             <Route path="client" element={<ClientUsers />} />
-            <Route path="internal" element={<InternalUsers />} />
+            <Route path="internal" element={<DeactivatedUsers />} />
 
             <Route path=":id" element={<UserDetails />} />
             <Route path=":id/edit" element={<EditUser />} />
