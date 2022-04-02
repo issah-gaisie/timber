@@ -48,7 +48,7 @@ export const profileRoutes = [
   },
 ];
 
-// ROUTES FOR THE USERS SECTION IN THE DASHBOARD
+// ROUTES FOR THE 
 export const userRoutes = [
   {
     name: "All Users",
@@ -72,7 +72,6 @@ export const userRoutes = [
   },
 ];
 
-// ROUTES FOR STOCK MANAGEMENT IN THE DASHBOARD
 export const stockRoutes = [
   {
     name: "Concession",
@@ -98,13 +97,9 @@ export const stockRoutes = [
     name: "Products",
     path: "products",
   },
-  {
-    name: "Product Types",
-    path: "product-types",
-  },
 ];
 
-// TEST USERS
+// test users
 export const testUsers = [
   {
     id: 1,
@@ -150,7 +145,6 @@ export const testUsers = [
   },
 ];
 
-// DUMMY ROLES FOR USERS
 export const userRoles = {
   CLIENT: "Client User",
   INTERNAL: "Internal User",

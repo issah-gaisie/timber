@@ -99,8 +99,8 @@ export const stockRoutes = [
     path: "products",
   },
   {
-    name: "Product Types",
-    path: "product-types",
+    name: "Product ",
+    path: "products",
   },
 ];
 

@@ -49,7 +49,6 @@ import ClientUsers from "./components/Dashboard/Users/ClientUsers";
 import InternalUsers from "./components/Dashboard/Users/InternalUsers";
 import ProductTypes from "./components/Dashboard/StockManagement/ProductType/ProductTypes";
 import AddProductType from "./components/Dashboard/StockManagement/ProductType/AddProductType";
-import EditProductType from "./components/Dashboard/StockManagement/ProductType/EditProductType";
 
 // All Dashboard Users Routes
 function App() {
@@ -132,7 +131,7 @@ function App() {
             <Route path="product-types" element={<OutLetShell />}>
               <Route index element={<ProductTypes />} />
               <Route path="add" element={<AddProductType />} />
-              <Route path=":id" element={<EditProductType />} />
+              <Route path=":id" element={<EditProduct />} />
             </Route>
             {/* Teams */}
             <Route path="teams" element={<OutLetShell />}>

@@ -47,9 +47,6 @@ import AddTeam from "./components/Dashboard/StockManagement/Team/AddTeam";
 import EditTeam from "./components/Dashboard/StockManagement/Team/EditTeam";
 import ClientUsers from "./components/Dashboard/Users/ClientUsers";
 import InternalUsers from "./components/Dashboard/Users/InternalUsers";
-import ProductTypes from "./components/Dashboard/StockManagement/ProductType/ProductTypes";
-import AddProductType from "./components/Dashboard/StockManagement/ProductType/AddProductType";
-import EditProductType from "./components/Dashboard/StockManagement/ProductType/EditProductType";
 
 // All Dashboard Users Routes
 function App() {
@@ -116,25 +113,17 @@ function App() {
               <Route path="add" element={<AddTree />} />
               <Route path=":id" element={<EditTree />} />
             </Route>
-            {/* Species */}
+            {/*  */}
             <Route path="species" element={<OutLetShell />}>
               <Route index element={<Species />} />
               <Route path="add" element={<AddSpecies />} />
               <Route path=":id" element={<EditSpecies />} />
             </Route>
-            {/* Products */}
             <Route path="products" element={<OutLetShell />}>
               <Route index element={<Products />} />
               <Route path="add" element={<AddProduct />} />
               <Route path=":id" element={<EditProduct />} />
             </Route>
-            {/* Product Types */}
-            <Route path="product-types" element={<OutLetShell />}>
-              <Route index element={<ProductTypes />} />
-              <Route path="add" element={<AddProductType />} />
-              <Route path=":id" element={<EditProductType />} />
-            </Route>
-            {/* Teams */}
             <Route path="teams" element={<OutLetShell />}>
               <Route index element={<Teams />} />
               <Route path="add" element={<AddTeam />} />
