@@ -5,17 +5,14 @@ import { FormGrid } from "../Users/AddANewUser";
 import Select from "../../Select";
 import { testConcessions } from "../../../utils";
 import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
-
-import { GrDeliver } from "react-icons/gr";
 import GoBack from "../sub-components/GoBack";
 import TextArea from "../../TextArea";
 import TreeFellItems from "./sub-components/TreeFellItems";
 import TreeFellItemsTable from "./sub-components/TreeFellItemsTable";
-import TreeFellStatusSteps from "./sub-components/TreeFellStatusSteps";
+import { Stepper } from 'react-form-stepper';
 
 const TreeFellDetails = () => {
   const [disabled, setDisabled] = useState(true);
-  const [activeStep, setActiveStep] = useState(0);
   const [state, setState] = useState({
     managerId: 0,
     supervisorId: 0,
@@ -28,13 +25,11 @@ const TreeFellDetails = () => {
 
   const toggleDisable = () => setDisabled((oldState) => !oldState);
 
+
   const handleChange = (e) => {
     const { value, id } = e.target;
     setState((oldState) => ({ ...oldState, [id]: value }));
   };
-
-  const updateStatus = () =>
-    setActiveStep((prevState) => (prevState < 3 ? prevState + 1 : prevState));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,6 +55,7 @@ const TreeFellDetails = () => {
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
       <div className="flex space-x-2 self-end">
+        
         {disabled ? (
           <div className="">
             <button
@@ -95,19 +91,10 @@ const TreeFellDetails = () => {
             </button>
           </div>
         )}
-        <button
-          className="text-tclPrimary bg-green-300 px-2 py-1 rounded rounded-lg"
-          onClick={updateStatus}
-          type="button"
-        >
-          Update Status
-        </button>
       </div>
-      <h2 className=" text-xl font-medium text-gray-700 my-3">
+      <h2 className=" text-xl font-medium text-gray-700 my-2">
         {disabled ? "TreeFell Details" : "Edit TreeFell"}
       </h2>
-      <TreeFellStatusSteps activeStep={activeStep} />
-
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Manager</span>

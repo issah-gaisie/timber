@@ -59,6 +59,7 @@ const TreeFellDetails = () => {
   return (
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
       <GoBack />
+      <TreeFellStatusSteps activeStep={activeStep} />
       <div className="flex space-x-2 self-end">
         {disabled ? (
           <div className="">
@@ -103,11 +104,9 @@ const TreeFellDetails = () => {
           Update Status
         </button>
       </div>
-      <h2 className=" text-xl font-medium text-gray-700 my-3">
+      <h2 className=" text-xl font-medium text-gray-700 my-2">
         {disabled ? "TreeFell Details" : "Edit TreeFell"}
       </h2>
-      <TreeFellStatusSteps activeStep={activeStep} />
-
       <FormGrid>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Manager</span>
