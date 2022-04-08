@@ -23,10 +23,6 @@ const AllTreeFells = () => {
       selector: (row) => row.totalQuantity,
     },
     {
-      name: "Date",
-      selector: (row) => row.date,
-    },
-    {
       name: "Actions",
       selector: (row) => (
         <div>
@@ -59,7 +55,7 @@ const data = [
     treeFellCode: "treefell-234tvd",
     description: "treefell Description",
     status: "completed",
-    date: new Date().toDateString(),
+    date: new Date(),
     totalQuantity: 130,
   },
   {
@@ -67,7 +63,7 @@ const data = [
     treeFellCode: "treefell-234tvd45",
     description: "treefell Description",
     status: "completed",
-    date: new Date().toDateString(),
+    date: new Date(),
     totalQuantity: 130,
   },
   {
@@ -75,7 +71,7 @@ const data = [
     treeFellCode: "treefell-234t5jvd",
     description: "TreeFell Description",
     status: "completed",
-    date: new Date().toDateString(),
+    date: new Date(),
     totalQuantity: 130,
   },
 ];

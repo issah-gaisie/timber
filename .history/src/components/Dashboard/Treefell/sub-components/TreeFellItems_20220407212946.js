@@ -100,7 +100,7 @@ const TreeFellItems = () => {
         );
       })}
       <button
-        className="w-auto px-2 sm:px-3 bg-tclPrimary/75 text-white font-semibold py-1 my-3 rounded rounded-md self-end"
+        className="w-auto sm:px-3 bg-tclPrimary/75 text-white font-semibold py-1 my-3 rounded rounded-md self-end"
         onClick={() => {
           setTreeFellItems((currentTreeFellItems) => [
             ...currentTreeFellItems,
