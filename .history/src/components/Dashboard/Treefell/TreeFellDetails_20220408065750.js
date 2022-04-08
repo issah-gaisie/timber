@@ -22,7 +22,7 @@ const TreeFellDetails = () => {
     description: "",
     totalQuantity: "",
     teamId: 0,
-    date: new Date().toISOString(),
+    date: new Date(),
     clerkId: 0,
     treeFellItems: [],
   });
@@ -162,11 +162,7 @@ const TreeFellDetails = () => {
         </label>
         <label className="block">
           <span className="block text-md  text-gray-700 mb-3">Date</span>
-          <Input
-            type="datetime-local"
-            disabled={disabled}
-            value={state.date.slice(0, 16)}
-          />
+          <Input type="datetime-local" disabled={disabled} value={state.date} />
         </label>
       </FormGrid>
       <h2 className="my-4 text-lg font-semibold">Items</h2>
