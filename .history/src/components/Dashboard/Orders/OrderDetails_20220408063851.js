@@ -1,0 +1,53 @@
+import React from "react";
+import { useState } from "react";
+import GoBack from "../sub-components/GoBack";
+import OrderItems from "./sub-components/OrderItems";
+import TotalSection from "./sub-components/TotalSection";
+import { RiFileDownloadLine } from "react-icons/ri";
+const OrderDetails = () => {
+  const [disabled, setDisabled] = useState(true);
+  const [state, setState] = useState({
+    id: 1,
+    orderNumber: "order-234tvd",
+    description: "Order Description",
+    status: "completed",
+    numberOfProducts: 13,
+    deliveryAddress: "Delivery Address",
+    totalAmount: 130,
+    destinationCountryId: 2,
+    comment: "",
+    dispatchTypeId: 3,
+    email: "tcl@gmail.com",
+    phoneNumber: "0200033400",
+    currencyId: 3,
+    vatAmount: 4,
+    contractNumber: "23456",
+    contractDocumentUrl: "https://contractdocurl.com",
+    contractDocumentFile: "",
+  });
+  return (
+    <div className="w-full flex flex-col">
+      <GoBack />
+      <button
+        type="button"
+        className="self-end bg-gray-700 hover:bg-gray-800 py-2 px-4 text-white text-medium font-semibold shadow-lg rounded rounded-md flex items-center"
+      >
+        <span className="">Download Contract</span>
+      </button>
+      <h1 className="text-3xl uppercase font-extrabold my-3 text-gray-600">
+        #{state.orderNumber}
+      </h1>
+      <div
+        className="gap-4 my-10 px-5 2xl:px-0"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+        }}
+      ></div>
+      <OrderItems />
+      <TotalSection />
+    </div>
+  );
+};
+
+export default OrderDetails;

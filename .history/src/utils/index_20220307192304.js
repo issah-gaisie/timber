@@ -1,2 +1,0 @@
-// sidebar utils
-const Sidebar

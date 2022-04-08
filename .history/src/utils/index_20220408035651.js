@@ -42,8 +42,10 @@ export const dashboardNavigation = [
   {
     name: "Warehouse",
     IconFilled: (props) => <FaWarehouse {...props} />,
-    Icon: (props) => <FaWarehouse {...props} />,
-    path: "warehouse",
+    Icon: (props) => (
+      <FaWarehouse className="text-white border-red-500" {...props} />
+    ),
+    path: "stock-management",
   },
   {
     name: "Users",
