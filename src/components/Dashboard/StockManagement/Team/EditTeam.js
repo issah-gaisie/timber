@@ -7,6 +7,7 @@ import { useState } from "react";
 import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
 import TextArea from "../../../TextArea";
 import TeamMemberForm from "./sub-components/TeamMemberForm";
+import TeamMemberList from "./sub-components/TeamMemberList";
 
 const EditTeam = () => {
   const [disabled, setDisabled] = useState(true);
@@ -85,12 +86,18 @@ const EditTeam = () => {
             </button>
           </div>
         )}
-       {state.isActive ? (
-          <button type='button' className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50">
+        {state.isActive ? (
+          <button
+            type="button"
+            className="text-sm text-red-600 bg-red-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-red-600/50"
+          >
             - Deactivate
           </button>
         ) : (
-          <button type='button' className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50">
+          <button
+            type="button"
+            className="text-sm text-green-600 bg-green-200 px-2 py-0.5 rounded rounded-lg hover:font-medium hover:ring-2 hover:ring-green-600/50"
+          >
             + Activate
           </button>
         )}
@@ -100,13 +107,11 @@ const EditTeam = () => {
       </h2>
       <FormGrid>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Team Name
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Team Name</span>
           <Input
             placeholder="Team Name"
-          disabled={disabled}
-          type="text"
+            disabled={disabled}
+            type="text"
             value={state.teamName}
           />
         </label>
@@ -114,47 +119,49 @@ const EditTeam = () => {
           <span className="block text-md  text-gray-700 mb-3">Description</span>
           <TextArea
             placeholder="Description"
-          disabled={disabled}
-          type="text"
+            disabled={disabled}
+            type="text"
             value={state.description}
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Supervisor
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Supervisor</span>
           <Input
             placeholder="Supervisor"
             type="text"
-          disabled={disabled}
-          value={state.supervisorId}
+            disabled={disabled}
+            value={state.supervisorId}
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Manager
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Manager</span>
           <Input
             placeholder="Manager"
             type="text"
-          disabled={disabled}
-          value={state.managerId}
+            disabled={disabled}
+            value={state.managerId}
           />
         </label>
         <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">
-            Driver
-          </span>
+          <span className="block text-md  text-gray-700 mb-3">Driver</span>
           <Input
             placeholder="Driver"
             type="text"
-          disabled={disabled}
-          value={state.driverId}
+            disabled={disabled}
+            value={state.driverId}
           />
         </label>
       </FormGrid>
       <h3 className=" text-lg font-medium text-gray-700 my-2">Team Members</h3>
-      <TeamMemberForm disabled={disabled} />
+      <TeamMemberList disabled={disabled} />
+
+      {!disabled && (
+        <>
+          <h3 className="font-medium text-gray-700 my-2">Add Team Members</h3>
+          <TeamMemberForm />
+        </>
+      )}
+
       {!disabled && (
         <button
           type="submit"
