@@ -58,10 +58,10 @@ export const dashboardNavigation = [
     path: "users",
   },
   {
-    name: "Settings",
+    name: "Profile",
     IconFilled: (props) => <RiSettings5Fill {...props} />,
     Icon: (props) => <RiSettings5Line {...props} />,
-    path: "settings",
+    path: "profile",
   },
 ];
 

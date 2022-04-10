@@ -131,7 +131,7 @@ function App() {
             <Route path="change-password" element={<ChangePassword />} />
           </Route>
           {/* Dashboard Waybill Section */}
-          <Route path="waybills" element={<Waybills />}>
+          <Route path="waybill" element={<Waybills />}>
             <Route index element={<Navigate to="history" replace />} />
             <Route path="history" element={<WaybillHistory />} />
             <Route path="returns" element={<Returns />} />

@@ -36,10 +36,10 @@ const Dashboard = () => {
           <span className="hidden md:block text-gray-700 text-sm font-semibold ml-3">
             Muniru Issah
           </span>
-          <div className="flex h-3 w-3 relative">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tclPrimary opacity-75"></span>
+          <div className="flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
             {/* <FaRegBell/>  */}
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-tclPrimary/50"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
           </div>
         </div>
       </header>

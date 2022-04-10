@@ -82,9 +82,6 @@ import Warehouse from "./components/Dashboard/Warehouse/Warehouse";
 import AllWarehouses from "./components/Dashboard/Warehouse/AllWarehouses";
 import AddWarehouse from "./components/Dashboard/Warehouse/AddWarehouse";
 import EditWarehouse from "./components/Dashboard/Warehouse/EditWarehouse";
-import Waybills from "./components/Dashboard/Waybills/Waybills";
-import WaybillHistory from "./components/Dashboard/Waybills/History/WaybillHistory";
-import Returns from "./components/Dashboard/Waybills/Returns/Returns";
 
 // All Dashboard Users Routes
 function App() {
@@ -131,10 +128,10 @@ function App() {
             <Route path="change-password" element={<ChangePassword />} />
           </Route>
           {/* Dashboard Waybill Section */}
-          <Route path="waybills" element={<Waybills />}>
+          <Route path="waybill" element={<Profile />}>
             <Route index element={<Navigate to="history" replace />} />
-            <Route path="history" element={<WaybillHistory />} />
-            <Route path="returns" element={<Returns />} />
+            <Route path="history" element={<PersonalDetails />} />
+            <Route path="returns" element={<ChangePassword />} />
           </Route>
           {/* Dashboard Order Section */}
           <Route path="orders" element={<Orders />}>
