@@ -220,8 +220,7 @@ const ImagesDisplaySection = (props) => {
       ))}
       {images.length === 0 && (
         <>
-          <h2>No Images</h2>
-          <br />
+          No Images
           <br />
         </>
       )}

@@ -174,7 +174,7 @@ const EditTree = () => {
       </FormGrid>
 
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
-      <ImagesDisplaySection disabled={disabled} />
+      <ImagesDisplaySection />
       {!disabled && <TreeDropzone />}
       {!disabled && (
         <button
@@ -203,11 +203,7 @@ const ImagesDisplaySection = (props) => {
   return (
     <div className="flex flex-wrap w-full ">
       {images.map((image, index) => (
-        <div
-          className="relative cursor-pointer"
-          key={index}
-          onClick={() => handleDelete(index)}
-        >
+        <div className="relative" key={index}>
           <img
             src={image}
             alt=""
@@ -218,13 +214,6 @@ const ImagesDisplaySection = (props) => {
           )}
         </div>
       ))}
-      {images.length === 0 && (
-        <>
-          <h2>No Images</h2>
-          <br />
-          <br />
-        </>
-      )}
     </div>
   );
 };

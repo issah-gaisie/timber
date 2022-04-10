@@ -204,7 +204,7 @@ const ImagesDisplaySection = (props) => {
     <div className="flex flex-wrap w-full ">
       {images.map((image, index) => (
         <div
-          className="relative cursor-pointer"
+          className="relative"
           key={index}
           onClick={() => handleDelete(index)}
         >
@@ -218,13 +218,6 @@ const ImagesDisplaySection = (props) => {
           )}
         </div>
       ))}
-      {images.length === 0 && (
-        <>
-          <h2>No Images</h2>
-          <br />
-          <br />
-        </>
-      )}
     </div>
   );
 };

@@ -5,7 +5,6 @@ import { FormGrid } from "../../Users/AddANewUser";
 import Input from "../../../Input";
 import Select from "../../../Select";
 import { RiEditBoxLine, RiCloseLine } from "react-icons/ri";
-import { HiMinusCircle } from "react-icons/hi";
 import toast from "react-hot-toast";
 import TextArea from "../../../TextArea";
 import TreeDropzone from "./sub-components/TreeDropzone";
@@ -174,7 +173,9 @@ const EditTree = () => {
       </FormGrid>
 
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
-      <ImagesDisplaySection disabled={disabled} />
+      {disabled && (
+        
+      )}
       {!disabled && <TreeDropzone />}
       {!disabled && (
         <button
@@ -189,42 +190,21 @@ const EditTree = () => {
 };
 
 export default EditTree;
-const dummyImages = [manCuttingTimber, manCuttingTimber, manCuttingTimber];
 
-const ImagesDisplaySection = (props) => {
-  let { disabled } = props;
-  const [images, setImages] = useState([...dummyImages]);
-  const handleDelete = (index) => {
-    if (disabled) return;
-    let newState = images.filter((image, id) => id != index);
-    setImages(newState);
-  };
 
-  return (
+const ImagesDisplaySection=()=>{
+  return(
     <div className="flex flex-wrap w-full ">
-      {images.map((image, index) => (
-        <div
-          className="relative cursor-pointer"
-          key={index}
-          onClick={() => handleDelete(index)}
-        >
-          <img
-            src={image}
-            alt=""
-            className="peer object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
-          />
-          {!disabled && (
-            <HiMinusCircle className="hidden text-red-700 absolute top-0 right-1 peer-hover:block text-xl" />
-          )}
+          {dummyImages.map((image, index) => (
+            <img
+              src={image}
+              key={index}
+              alt=""
+              className="object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
+            />
+          ))}
         </div>
-      ))}
-      {images.length === 0 && (
-        <>
-          <h2>No Images</h2>
-          <br />
-          <br />
-        </>
-      )}
-    </div>
   );
-};
+}
+
+const dummyImages = [manCuttingTimber, manCuttingTimber, manCuttingTimber];

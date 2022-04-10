@@ -222,7 +222,6 @@ const ImagesDisplaySection = (props) => {
         <>
           <h2>No Images</h2>
           <br />
-          <br />
         </>
       )}
     </div>

@@ -174,7 +174,7 @@ const EditTree = () => {
       </FormGrid>
 
       <h3 className=" text-lg font-medium text-gray-700 my-2">Tree Images</h3>
-      <ImagesDisplaySection disabled={disabled} />
+      {disabled && <ImagesDisplaySection />}
       {!disabled && <TreeDropzone />}
       {!disabled && (
         <button
@@ -191,40 +191,21 @@ const EditTree = () => {
 export default EditTree;
 const dummyImages = [manCuttingTimber, manCuttingTimber, manCuttingTimber];
 
-const ImagesDisplaySection = (props) => {
-  let { disabled } = props;
+const ImagesDisplaySection = () => {
   const [images, setImages] = useState([...dummyImages]);
-  const handleDelete = (index) => {
-    if (disabled) return;
-    let newState = images.filter((image, id) => id != index);
-    setImages(newState);
-  };
 
   return (
     <div className="flex flex-wrap w-full ">
       {images.map((image, index) => (
-        <div
-          className="relative cursor-pointer"
-          key={index}
-          onClick={() => handleDelete(index)}
-        >
+        <div className="relative" key={index}>
           <img
             src={image}
             alt=""
             className="peer object-cover w-24 h-24 shrink-0 first:ml-0 m-2 rounded rounded-lg"
           />
-          {!disabled && (
-            <HiMinusCircle className="hidden text-red-700 absolute top-0 right-1 peer-hover:block text-xl" />
-          )}
+          <HiMinusCircle className="hidden text-red-500 absolute top-0 right-1 peer-hover:block text-xl" />
         </div>
       ))}
-      {images.length === 0 && (
-        <>
-          <h2>No Images</h2>
-          <br />
-          <br />
-        </>
-      )}
     </div>
   );
 };

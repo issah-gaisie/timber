@@ -33,7 +33,7 @@ const img = {
 };
 
 const TreeDropzone = () => {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState([manCTimber]);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {

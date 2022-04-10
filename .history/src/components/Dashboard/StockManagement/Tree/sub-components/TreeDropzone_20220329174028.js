@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import manCTimber from "../../../.././../assets/man_cutting_timber.jpg";
+
 const thumbsContainer = {
   display: "flex",
   flexDirection: "row",
@@ -59,12 +59,8 @@ const TreeDropzone = () => {
     console.log(files);
   }, [files]);
 
-  const thumbs = files.map((file, index) => (
-    <div
-      style={thumb}
-      key={file.name}
-      onClick={() => setFiles(files.filter((f) => f.name != file.name))}
-    >
+  const thumbs = files.map((file,index) => (
+    <div style={thumb} key={file.name} onClick={()=>setFiles(files.filter(f=>f.name!=file.name))}>
       <div style={thumbInner}>
         <img src={file.preview} style={img} />
       </div>

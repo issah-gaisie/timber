@@ -218,13 +218,6 @@ const ImagesDisplaySection = (props) => {
           )}
         </div>
       ))}
-      {images.length === 0 && (
-        <>
-          <h2>No Images</h2>
-          <br />
-          <br />
-        </>
-      )}
     </div>
   );
 };
