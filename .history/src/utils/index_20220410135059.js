@@ -11,7 +11,7 @@ import {
 import { FaWarehouse } from "react-icons/fa";
 import { HiUsers, HiOutlineUsers } from "react-icons/hi";
 import { BsTree } from "react-icons/bs";
-import { AiOutlineFileSearch, AiFillFileText } from "react-icons/ai";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import { GiLogging } from "react-icons/gi";
 import manCTimber from "../assets/man_cutting_timber.jpg";
 // sidebar utils
@@ -42,14 +42,14 @@ export const dashboardNavigation = [
   },
   {
     name: "Warehouse",
-    IconFilled: (props) => <FaWarehouse {...props} />,
-    Icon: (props) => <FaWarehouse {...props} />,
+    IconFilled: (props) => <AiOutlineFileSearch {...props} />,
+    Icon: (props) => <AiOutlineFileSearch {...props} />,
     path: "warehouse",
   },
   {
     name: "Waybills",
-    IconFilled: (props) => <AiFillFileText {...props} />,
-    Icon: (props) => <AiOutlineFileSearch {...props} />,
+    IconFilled: (props) => <FaWarehouse {...props} />,
+    Icon: (props) => <FaWarehouse {...props} />,
     path: "waybills",
   },
   {

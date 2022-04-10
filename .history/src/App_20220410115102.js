@@ -87,10 +87,6 @@ import WaybillHistory from "./components/Dashboard/Waybills/History/WaybillHisto
 import Returns from "./components/Dashboard/Waybills/Returns/Returns";
 import Settings from "./components/Dashboard/Settings/Settings";
 import Notifications from "./components/Dashboard/Notifications/Notifications";
-import AddWaybill from "./components/Dashboard/Waybills/History/AddWaybill";
-import EditWaybill from "./components/Dashboard/Waybills/History/EditWaybill";
-import AddReturn from "./components/Dashboard/Waybills/Returns/AddReturn";
-import EditReturn from "./components/Dashboard/Waybills/Returns/EditReturn";
 
 // All Dashboard Users Routes
 function App() {
@@ -147,14 +143,8 @@ function App() {
             <Route index element={<Navigate to="history" replace />} />
             <Route path="history" element={<OutLetShell />}>
               <Route index element={<WaybillHistory />} />
-              <Route path="add" element={<AddWaybill />} />
-              <Route path=":id" element={<EditWaybill />} />
             </Route>
-            <Route path="returns" element={<OutLetShell />}>
-              <Route index element={<Returns />} />
-              <Route path="add" element={<AddReturn />} />
-              <Route path=":id" element={<EditReturn />} />
-            </Route>
+            <Route path="returns" element={<Returns />} />
           </Route>
           {/* Dashboard Order Section */}
           <Route path="orders" element={<Orders />}>

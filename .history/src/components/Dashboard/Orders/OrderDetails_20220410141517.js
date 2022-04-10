@@ -9,10 +9,6 @@ import OrderStatusSteps from "./sub-components/OrderStatusSteps";
 const OrderDetails = () => {
   const [disabled, setDisabled] = useState(true);
   const [activeStep, setActiveStep] = useState(0);
-
-  const updateStatus = () =>
-    setActiveStep((prevState) => (prevState < 3 ? prevState + 1 : prevState));
-
   const [state, setState] = useState({
     id: 1,
     orderNumber: "order-234tvd",

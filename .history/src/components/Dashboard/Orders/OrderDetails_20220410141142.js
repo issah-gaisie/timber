@@ -9,10 +9,6 @@ import OrderStatusSteps from "./sub-components/OrderStatusSteps";
 const OrderDetails = () => {
   const [disabled, setDisabled] = useState(true);
   const [activeStep, setActiveStep] = useState(0);
-
-  const updateStatus = () =>
-    setActiveStep((prevState) => (prevState < 3 ? prevState + 1 : prevState));
-
   const [state, setState] = useState({
     id: 1,
     orderNumber: "order-234tvd",
@@ -38,21 +34,12 @@ const OrderDetails = () => {
   return (
     <div className="w-full flex flex-col">
       <GoBack />
-      <div className="flex space-x-2 self-end">
-        <button
-          type="button"
-          className="bg-gray-700 hover:bg-gray-800 py-2 px-4 text-white text-medium font-semibold shadow-lg rounded rounded-md flex items-center"
-        >
-          <span className="">Download Contract</span>
-        </button>
-        <button
-          className="text-tclPrimary bg-green-300 px-2 py-1 rounded rounded-lg"
-          onClick={updateStatus}
-          type="button"
-        >
-          Update Status
-        </button>
-      </div>
+      <button
+        type="button"
+        className="self-end bg-gray-700 hover:bg-gray-800 py-2 px-4 text-white text-medium font-semibold shadow-lg rounded rounded-md flex items-center"
+      >
+        <span className="">Download Contract</span>
+      </button>
       <h1 className="text-3xl uppercase font-extrabold my-3 text-gray-600">
         #{state.orderNumber}
       </h1>
