@@ -1,6 +1,7 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
+import AddnExport from "../../StockManagement/sub-components/Add-Export";
 import Search from "../../StockManagement/sub-components/Search";
 import TableActions from "../../StockManagement/sub-components/TableActions";
 const Returns = () => {
@@ -41,7 +42,7 @@ const Returns = () => {
       selector: (row) => (
         <div>
           <TableActions
-            viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
+            viewAction={() => navigate(`/dashboard/waybills/returns/${row.id}`)}
             noDelete
           />
         </div>
@@ -50,7 +51,7 @@ const Returns = () => {
   ];
   return (
     <div className="w-full">
-      {/* <AddnExport /> */}
+      <AddnExport />
       <Search placeholder="Search Waybill Returns" />
       <DataTable
         className="w-full rounded rounded-lg"

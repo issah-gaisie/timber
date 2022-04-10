@@ -3,7 +3,7 @@ import DataTable from "react-data-table-component";
 import { useNavigate } from "react-router-dom";
 import Search from "../../StockManagement/sub-components/Search";
 import TableActions from "../../StockManagement/sub-components/TableActions";
-
+import AddnExport from "../../StockManagement/sub-components/Add-Export";
 const WaybillHistory = () => {
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const WaybillHistory = () => {
       selector: (row) => (
         <div>
           <TableActions
-            viewAction={() => navigate(`/dashboard/orders/${row.id}`)}
+            viewAction={() => navigate(`/dashboard/waybills/history/${row.id}`)}
             noDelete
           />
         </div>
@@ -56,7 +56,7 @@ const WaybillHistory = () => {
   ];
   return (
     <div className="w-full">
-      {/* <AddnExport /> */}
+      <AddnExport />
       <Search placeholder="Search Waybills" />
       <DataTable
         className="w-full rounded rounded-lg"
