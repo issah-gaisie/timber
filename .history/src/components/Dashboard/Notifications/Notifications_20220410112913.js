@@ -15,7 +15,7 @@ const Notifications = () => {
       </h1>
       <DataTable
         className="w-full rounded rounded-lg"
-        columns={notificationColumns}
+        columns={waybillColumns}
         data={data}
         pagination
       />

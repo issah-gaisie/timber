@@ -86,7 +86,6 @@ import Waybills from "./components/Dashboard/Waybills/Waybills";
 import WaybillHistory from "./components/Dashboard/Waybills/History/WaybillHistory";
 import Returns from "./components/Dashboard/Waybills/Returns/Returns";
 import Settings from "./components/Dashboard/Settings/Settings";
-import Notifications from "./components/Dashboard/Notifications/Notifications";
 
 // All Dashboard Users Routes
 function App() {
@@ -114,10 +113,7 @@ function App() {
           <Route path="main" element={<DashboardMain />} />
 
           {/* Admin Settings */}
-          <Route path="settings" element={<Settings />} />
-          {/* Admin Settings */}
-          <Route path="notifications" element={<Notifications />} />
-
+          <Route path="settings" element={<Settings/>}
           {/* Admin Dashboard Users */}
           <Route path="users" element={<Users />}>
             <Route index element={<Navigate to="all" replace />} />

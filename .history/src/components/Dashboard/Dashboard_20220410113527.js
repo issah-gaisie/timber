@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import logo from "../../assets/TCL2.png";
 import profile from "../../assets/man_cutting_timber.jpg";
 
-import { FaAngleDown, FaAngleUp, FaRegBell, FaBell } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp, FaRegBell } from "react-icons/fa";
 
 import { Link, Outlet, useLocation, NavLink } from "react-router-dom";
 import Sidebar from "./sub-components/Sidebar";

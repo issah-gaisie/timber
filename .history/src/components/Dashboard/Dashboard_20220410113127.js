@@ -4,9 +4,9 @@ import React, { useMemo, useState } from "react";
 import logo from "../../assets/TCL2.png";
 import profile from "../../assets/man_cutting_timber.jpg";
 
-import { FaAngleDown, FaAngleUp, FaRegBell, FaBell } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp, FaRegBell } from "react-icons/fa";
 
-import { Link, Outlet, useLocation, NavLink } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./sub-components/Sidebar";
 import ProfilePopup from "./sub-components/ProfilePopup";
 import FloatingBottomNavBar from "./sub-components/FloatingBottomNavBar";
@@ -38,20 +38,13 @@ const Dashboard = () => {
               Muniru Issah
             </span>
           </Link>
-          <NavLink className="relative" to="notifications">
-            {({ isActive }) => (
-              <>
-                <FaRegBell className={isActive ? "hidden" : "text-xl"} />
-                <FaBell
-                  className={isActive ? "text-xl text-tclPrimary" : "hidden"}
-                />
-                <div className="flex h-1.5 w-1.5 absolute bottom-1 right-[1px]">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tclPrimary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-600"></span>
-                </div>
-              </>
-            )}
-          </NavLink>
+          <Link className="relative" to="notifications">
+            <FaRegBell className="text-xl" />
+            <div className="flex h-1.5 w-1.5 absolute bottom-1 right-[1px]">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tclPrimary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-600"></span>
+            </div>
+          </Link>
         </div>
       </header>
       {/* Dashboard Main */}
