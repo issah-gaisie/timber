@@ -3,7 +3,7 @@ import DataTable from "react-data-table-component";
 import Input from "../../../../Input";
 import TableActions from "../../../StockManagement/sub-components/TableActions";
 import EditItemModal from "./EditItemModal";
-const ReturnItems = (props) => {
+const OrderItems = (props) => {
   const [state, setState] = useState([...data]);
   const [visible, setVisible] = useState(false);
 
@@ -14,14 +14,14 @@ const ReturnItems = (props) => {
 
   const handleItemEdit = () => {};
 
-  const returnItemColumns = [
+  const orderItemColumns = [
     {
       name: "Product Name",
       selector: (row) => row.productName,
     },
     {
-      name: "Reason",
-      selector: (row) => row.reason,
+      name: "Species",
+      selector: (row) => row.species,
     },
 
     {
@@ -62,10 +62,10 @@ const ReturnItems = (props) => {
       selector: (row) => (
         <div>
           <TableActions
+            viewAction={() => toggleModal(row.id)}
             deleteAction={() =>
               window.confirm("Are you sure you want to delete this item?")
             }
-            viewAction={() => toggleModal(row.id)}
           />
         </div>
       ),
@@ -75,10 +75,10 @@ const ReturnItems = (props) => {
   return (
     <div className="w-full">
       <DataTable
-        title={<span className="font-semibold">Return Items</span>}
+        title={<span className="font-semibold">Order Items</span>}
         data={state}
         disabled={props.disabled}
-        columns={returnItemColumns}
+        columns={orderItemColumns}
       />
       <EditItemModal visible={visible} hide={toggleModal}>
         <EditForm />
@@ -87,7 +87,7 @@ const ReturnItems = (props) => {
   );
 };
 
-export default ReturnItems;
+export default OrderItems;
 
 const EditForm = (props) => {
   const [state, setState] = useState({
@@ -100,12 +100,11 @@ const EditForm = (props) => {
     tickness: "Tickness",
     width: 23,
     length: 12,
-    reason: "",
   });
   return (
     <form className="w-full flex flex-col">
       <div
-        className="gap-6 mb-5 px-5 2xl:px-0"
+        className="gap-6 my-10 px-5 2xl:px-0"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
@@ -119,15 +118,6 @@ const EditForm = (props) => {
             placeholder="Product Name"
             type="text"
             value={state.productName}
-          />
-        </label>
-        <label className="block">
-          <span className="block text-md  text-gray-700 mb-3">Reason</span>
-          <Input
-            placeholder="Reason"
-            type="number"
-            step="0.0"
-            value={state.reason}
           />
         </label>
         <label className="block">
@@ -170,7 +160,7 @@ const EditForm = (props) => {
           />
         </label>
       </div>
-      <button className="w-full md:w-60 md:self-end rounded rounded-md py-3 text-white bg-tclPrimary">
+      <button className="w-full md:w-60 py-3 text-white bg-tclPrimary">
         Edit Item
       </button>
     </form>
@@ -188,7 +178,6 @@ const data = [
     tickness: "Tickness",
     width: 23,
     length: 12,
-    reason: "Reason for returning",
   },
   {
     id: 2,
@@ -200,7 +189,6 @@ const data = [
     tickness: "Tickness",
     width: 23,
     length: 12,
-    reason: "Reason for returning",
   },
   {
     id: 3,
@@ -212,6 +200,5 @@ const data = [
     tickness: "Tickness",
     width: 23,
     length: 12,
-    reason: "Reason for returning",
   },
 ];

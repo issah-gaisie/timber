@@ -198,7 +198,7 @@ const EditReturn = () => {
         </label>
       </FormGrid>
       <br />
-      <ReturnItems disabled={disabled} />
+      <ReturnItems />
       {!disabled && (
         <button
           type="submit"

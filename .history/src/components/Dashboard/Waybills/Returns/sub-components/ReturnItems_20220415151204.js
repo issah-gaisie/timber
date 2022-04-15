@@ -75,7 +75,7 @@ const ReturnItems = (props) => {
   return (
     <div className="w-full">
       <DataTable
-        title={<span className="font-semibold">Return Items</span>}
+        title={<span className="font-semibold">Order Items</span>}
         data={state}
         disabled={props.disabled}
         columns={returnItemColumns}

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DataTable from "react-data-table-component";
 import Input from "../../../../Input";
 import TableActions from "../../../StockManagement/sub-components/TableActions";
-import EditItemModal from "./EditItemModal";
+import EditItemModal from "./sub-components/EditItemModal";
 const ReturnItems = (props) => {
   const [state, setState] = useState([...data]);
   const [visible, setVisible] = useState(false);
@@ -75,8 +75,8 @@ const ReturnItems = (props) => {
   return (
     <div className="w-full">
       <DataTable
-        title={<span className="font-semibold">Return Items</span>}
-        data={state}
+        title={<span className="font-semibold">Order Items</span>}
+        data={data}
         disabled={props.disabled}
         columns={returnItemColumns}
       />
