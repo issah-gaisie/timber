@@ -99,8 +99,6 @@ import Payments from "./components/Dashboard/Payments/Payments";
 import AllPayments from "./components/Dashboard/Payments/AllPayments";
 import WaybillnOrderPayments from "./components/Dashboard/Payments/WaybillnOrderPayments";
 import UserPayments from "./components/Dashboard/Payments/UserPayments";
-import AddPayment from "./components/Dashboard/Payments/AddPayment";
-import EditPayment from "./components/Dashboard/Payments/EditPayment";
 
 // All Dashboard Users Routes
 function App() {
@@ -242,8 +240,6 @@ function App() {
             <Route path="all" element={<AllPayments />} />
             <Route path="waybill-order" element={<WaybillnOrderPayments />} />
             <Route path="user" element={<UserPayments />} />
-            <Route path="add" element={<AddPayment />} />
-            <Route path=":id" element={<EditPayment />} />
           </Route>
         </Route>
       </Routes>

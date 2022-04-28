@@ -95,12 +95,10 @@ import EditReturn from "./components/Dashboard/Waybills/Returns/EditReturn";
 import CompanyInfo from "./components/Dashboard/Settings/CompanyInfo";
 import Currency from "./components/Dashboard/Settings/Currency";
 
-import Payments from "./components/Dashboard/Payments/Payments";
+import Payment from "./components/Dashboard/Payment/Payment";
 import AllPayments from "./components/Dashboard/Payments/AllPayments";
 import WaybillnOrderPayments from "./components/Dashboard/Payments/WaybillnOrderPayments";
 import UserPayments from "./components/Dashboard/Payments/UserPayments";
-import AddPayment from "./components/Dashboard/Payments/AddPayment";
-import EditPayment from "./components/Dashboard/Payments/EditPayment";
 
 // All Dashboard Users Routes
 function App() {
@@ -237,13 +235,11 @@ function App() {
             <Route path=":id" element={<EditWarehouse />} />
           </Route>
           {/* Dashboard Payments Section */}
-          <Route path="payments" element={<Payments />}>
+          <Route path="payments" element={<Payment />}>
             <Route index element={<Navigate to="all" replace />} />
             <Route path="all" element={<AllPayments />} />
             <Route path="waybill-order" element={<WaybillnOrderPayments />} />
             <Route path="user" element={<UserPayments />} />
-            <Route path="add" element={<AddPayment />} />
-            <Route path=":id" element={<EditPayment />} />
           </Route>
         </Route>
       </Routes>
