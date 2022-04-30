@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 import { dashboardNavigation } from "../../../utils";
 const Sidebar = () => {
   return (
-    <nav className="h-full bg-white shadow-xs min-w-[4rem] basis-[5%] flex-col items-center justify-between  hidden md:flex">
+    <nav className="h-full bg-white shadow-xs min-w-[4rem] basis-[10%] flex-col items-center justify-between h-full overflow-auto  hidden md:flex">
       <div className="flex flex-col justify-center space-y-10 pt-10">
         {dashboardNavigation.map((navItem, index) => (
           <NavLink key={index} to={navItem.path} className="group">
             {({ isActive }) => (
-              <>
+              <div className="flex flex-col items-center space-y-2 w-32">
                 <navItem.Icon
                   className={
                     isActive
@@ -25,13 +25,15 @@ const Sidebar = () => {
                       : "hidden text-3xl text-lime-700 group-hover:block"
                   }
                 />
-              </>
+
+                <h2 className={"text-center"}>{navItem.name}</h2>
+              </div>
             )}
           </NavLink>
         ))}
       </div>
 
-      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mb-10">
+      <div className=" flex justify-center items-center bg-red-700 hover:bg-red-900 p-2 rounded rounded-full mt-20 mb-10">
         <RiShutDownLine className="text-2xl text-white" />
       </div>
     </nav>

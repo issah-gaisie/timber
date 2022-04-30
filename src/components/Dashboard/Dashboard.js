@@ -36,7 +36,7 @@ const Dashboard = () => {
               style={{ backgroundImage: `url(${profile})` }}
             ></div>
             <span className="hidden md:block text-gray-700 text-sm font-semibold ml-3">
-              Muniru Issah
+              Ernest Gaisie
             </span>
           </Link>
           <div className="relative">

@@ -13,7 +13,12 @@ import { HiUsers, HiOutlineUsers } from "react-icons/hi";
 import { BsTree } from "react-icons/bs";
 import { AiOutlineFileSearch, AiFillFileText } from "react-icons/ai";
 import { GiLogging } from "react-icons/gi";
-import { MdPayments, MdOutlinePayments } from "react-icons/md";
+import {
+  MdPayments,
+  MdOutlinePayments,
+  MdAnalytics,
+  MdOutlineAnalytics,
+} from "react-icons/md";
 import manCTimber from "../assets/man_cutting_timber.jpg";
 // sidebar utils
 export const dashboardNavigation = [
@@ -22,6 +27,12 @@ export const dashboardNavigation = [
     IconFilled: (props) => <RiDashboardFill {...props} />,
     Icon: (props) => <RiDashboardLine {...props} />,
     path: "main",
+  },
+  {
+    name: "Analytics",
+    IconFilled: (props) => <MdAnalytics {...props} />,
+    Icon: (props) => <MdOutlineAnalytics {...props} />,
+    path: "analytics",
   },
   {
     name: "Orders",

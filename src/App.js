@@ -2,7 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Navigate, Route, Routes, Outlet } from "react-router-dom";
 import Login from "./components/Login";
-
+import "react-datepicker/dist/react-datepicker.css";
+import "react-vis/dist/style.css";
 import Auth from "./components/Auth";
 import { Toaster } from "react-hot-toast";
 // import "@szhsin/react-menu/dist/core.css";
@@ -101,6 +102,7 @@ import WaybillnOrderPayments from "./components/Dashboard/Payments/WaybillnOrder
 import UserPayments from "./components/Dashboard/Payments/UserPayments";
 import AddPayment from "./components/Dashboard/Payments/AddPayment";
 import EditPayment from "./components/Dashboard/Payments/EditPayment";
+import Analytics from "./components/Dashboard/Analytics/Analytics";
 
 // All Dashboard Users Routes
 function App() {
@@ -126,6 +128,9 @@ function App() {
           <Route index element={<Navigate to="main" replace />} />
           {/* Main Dashboard Page */}
           <Route path="main" element={<DashboardMain />} />
+
+          {/* Dashboard Analytics Page */}
+          <Route path="analytics" element={<Analytics />} />
 
           {/* Admin Settings */}
           <Route path="settings" element={<Settings />}>
